@@ -4,7 +4,7 @@
 set_window_pos()
 
 x = center_x + screen_pos_x// (sin(test_timer * .01) * 500.)// - screen_pos_x
-y = center_y// - screen_pos_y
+y = center_y + screen_pos_y// - screen_pos_y
 
 if keyboard_check_pressed(vk_down)
 {

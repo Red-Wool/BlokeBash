@@ -10,7 +10,7 @@ screen_pos_y = 0;
 
 test_timer = 0
 
-window_size_x_percent = .3
+window_size_x_percent = .4
 window_xy_ratio = display_get_height()/display_get_width()
 
 window_size_x = display_get_width() * window_size_x_percent
@@ -39,6 +39,16 @@ function set_window_pos()
 function hit_wall(_force)
 {
 	screen_velocity_x += _force;
+}
+
+function set_wall_position_x(_mult)
+{
+	return center_x + screen_pos_x + window_get_width()*.5 * _mult
+}
+
+function set_wall_position_y(_mult)
+{
+	return center_y + screen_pos_y + window_get_height()*.5 * _mult
 }
 
 window_set_caption("Bloke Bash")
