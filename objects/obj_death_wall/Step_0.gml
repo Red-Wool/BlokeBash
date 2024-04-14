@@ -15,7 +15,7 @@ if instance_place(x, y, obj_test_controller) //Hitting Player
 if instance_place(x, y, obj_test_arm) //Hitting Arm
 {
 	var arm = instance_place(x, y, obj_test_arm)
-	global.screen_manager.hit_wall(side_x * .01)
+	global.screen_manager.hit_wall(side_x * .01, side_y * .01)
 }
 
 

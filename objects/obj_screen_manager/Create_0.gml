@@ -25,8 +25,9 @@ window_set_size(window_size_x, window_size_y)
 screen_velocity_x = 0
 screen_velocity_y = 0
 
-velocity_decay = .98;
-velocity_display_edge_decay = .2;
+velocity_decay = .98
+velocity_gravity = .001
+velocity_display_edge_decay = .2
 
 function set_window_pos()
 {
@@ -36,9 +37,13 @@ function set_window_pos()
 	window_set_position(screen_pos_x, screen_pos_y)
 }
 
-function hit_wall(_force)
+function hit_wall(_force_x, _force_y)
 {
-	screen_velocity_x += _force;
+	screen_velocity_x += _force_x;
+	screen_velocity_y += _force_y;
+	
+	//Make sure sign is correct direction
+	screen_y += _force_y * .001
 }
 
 function set_wall_position_x(_mult)
