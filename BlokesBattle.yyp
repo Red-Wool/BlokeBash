@@ -45,6 +45,7 @@
     {"id":{"name":"obj_screen_manager","path":"objects/obj_screen_manager/obj_screen_manager.yy",},},
     {"id":{"name":"obj_test_screen","path":"objects/obj_test_screen/obj_test_screen.yy",},},
     {"id":{"name":"spr_guac","path":"sprites/spr_guac/spr_guac.yy",},},
+    {"id":{"name":"obj_game_manager","path":"objects/obj_game_manager/obj_game_manager.yy",},},
     {"id":{"name":"spr_body","path":"sprites/spr_body/spr_body.yy",},},
     {"id":{"name":"obj_test_controller","path":"objects/obj_test_controller/obj_test_controller.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
