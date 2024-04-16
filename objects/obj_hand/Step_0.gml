@@ -1,28 +1,30 @@
-	if gamepad_is_connected(0)
+if(keyboard_check_pressed(ord("A")))
 {
-	//Get Left Stick Input
-	var haxis = gamepad_axis_value(0, gp_axisrh);
-	var vaxis = gamepad_axis_value(0, gp_axisrv);
+	if(!hit && prevX < currentX)
+	{
+		sprite_index = spr_hand_active
+		hit = attackFrames + cooldownFrames;
+	}
 	
-	x = shoulderX + haxis * reach
-	y = shoulderY + vaxis * reach
 }
-else
+
+
+if(hit)
 {
-	if(point_distance(shoulderX,shoulderY,mouse_x,mouse_y) < reach)
+	hit -= 1;
+	if(hit <= cooldownFrames)
 	{
-		x = shoulderX + (mouse_x- shoulderX);
-		y = shoulderY + (mouse_y- shoulderY);
+		sprite_index = spr_hand_end;
 	}
-	else
-	{
-	x = shoulderX + reach*((mouse_x- shoulderX)/ sqrt(sqr(mouse_x- shoulderX) + sqr(mouse_y- shoulderY)));
-	y = shoulderY + reach*((mouse_y- shoulderY)/ sqrt(sqr(mouse_x- shoulderX) + sqr(mouse_y- shoulderY)));
 	
+	if(!hit)
+	{
+		sprite_index = spr_hand
 	}
 }
-	
-	
-	
+
+
+
+
 
 

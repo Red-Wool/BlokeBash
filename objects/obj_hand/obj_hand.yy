@@ -4,6 +4,7 @@
   "name": "obj_hand",
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":2,"eventType":3,"isDnD":false,},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
   ],
   "managed": true,
@@ -29,8 +30,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_hand",
-    "path": "sprites/spr_hand/spr_hand.yy",
+    "name": "spr_hand_active",
+    "path": "sprites/spr_hand_active/spr_hand_active.yy",
   },
   "spriteMaskId": null,
   "visible": true,

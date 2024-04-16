@@ -29,7 +29,6 @@ if(speed == 0)
 	 direction = direction + 180;
  }
  speed = sqrt(sqr(yOri+yNew) + sqr(xOri+xNew))
- show_debug_message("CUT")
 }
 //set Y velocity to 0
 function stopYVelocity()
