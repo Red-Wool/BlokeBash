@@ -1,28 +1,42 @@
-	if gamepad_is_connected(0)
+if(keyboard_check_pressed(ord("A")))
 {
-	//Get Left Stick Input
-	var haxis = gamepad_axis_value(0, gp_axisrh);
-	var vaxis = gamepad_axis_value(0, gp_axisrv);
-	
-	x = shoulderX + haxis * reach
-	y = shoulderY + vaxis * reach
-}
-else
-{
-	if(point_distance(shoulderX,shoulderY,mouse_x,mouse_y) < reach)
+	//&& prevX < currentX
+	if(!hit)
 	{
-		x = shoulderX + (mouse_x- shoulderX);
-		y = shoulderY + (mouse_y- shoulderY);
+		p = 1;
+		sprite_index = spr_hand_active
+		hit = attackFrames + cooldownFrames;
+	}
+	
+}
+
+
+if(hit)
+{
+	hit -= 1;
+	
+	if(hit <= cooldownFrames)
+	{
+		sprite_index = spr_hand_end;
 	}
 	else
 	{
-	x = shoulderX + reach*((mouse_x- shoulderX)/ sqrt(sqr(mouse_x- shoulderX) + sqr(mouse_y- shoulderY)));
-	y = shoulderY + reach*((mouse_y- shoulderY)/ sqrt(sqr(mouse_x- shoulderX) + sqr(mouse_y- shoulderY)));
+		o = instance_place(x,y,obj_dummy)
+		if(instance_exists(o) && p)
+		{
+			o.addVector(image_angle+90,10)
+			p = 0;
+		}
+	}
 	
+	if(!hit)
+	{
+		sprite_index = spr_hand
 	}
 }
-	
-	
-	
+
+
+
+
 
 

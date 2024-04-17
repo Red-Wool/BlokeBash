@@ -1,11 +1,3 @@
-/// @description Insert description here
-// You can write your code in this editor
-
-gamepad_set_axis_deadzone(0, .1)
-
-//hand = instance_create_depth(x,y,-1,obj_test_arm)
-
-//add velocity vector to character
 function addVector(dir,length)
 {
 if(speed == 0)
@@ -46,9 +38,3 @@ grounded = 0;
 upGravity = .40;
 downGravity = .50;
 moveSpeed = 5;
-
-handObj = instance_create_depth(x,y,-10,obj_hand)
-handObj.shoulderX = x
-handObj.shoulderY = y
-handObj.holdX = x
-handObj.holdY = y

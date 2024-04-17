@@ -1,7 +1,7 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_hand",
+  "name": "obj_dummy",
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":2,"eventType":3,"isDnD":false,},
@@ -30,8 +30,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_hand",
-    "path": "sprites/spr_hand/spr_hand.yy",
+    "name": "spr_dummy",
+    "path": "sprites/spr_dummy/spr_dummy.yy",
   },
   "spriteMaskId": null,
   "visible": true,
