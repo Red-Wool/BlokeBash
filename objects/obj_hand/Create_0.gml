@@ -27,6 +27,7 @@ function moveTowards(start,target,pace)
 
 cursorlock = 0;
 
+p = 0;
 hit = 0;
-attackFrames = 15;
+attackFrames = 30;
 cooldownFrames = 20;
