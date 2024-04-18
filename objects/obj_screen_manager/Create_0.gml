@@ -17,15 +17,15 @@ window_size_x = display_get_width() * window_size_x_percent
 window_size_y = window_size_x * window_xy_ratio
 
 camera_set_view_size(view_camera[0], window_size_x, window_size_y)
-show_debug_message(window_size_x)
-show_debug_message(window_size_y)
+//show_debug_message(window_size_x)
+//show_debug_message(window_size_y)
 
 window_set_size(window_size_x, window_size_y)
 
 screen_velocity_x = 0
 screen_velocity_y = 0
 
-velocity_decay = .98
+velocity_decay = .97
 velocity_gravity = .001
 velocity_display_edge_decay = .2
 

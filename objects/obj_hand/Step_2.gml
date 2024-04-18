@@ -1,5 +1,4 @@
 
-
 if gamepad_is_connected(0)
 {
 	//Get Left Stick Input
@@ -50,10 +49,7 @@ else
 	
 	x = shoulderX + currentX;
 	y = shoulderY + currentY;
-<<<<<<< HEAD
-=======
 	image_angle = point_direction(shoulderX,shoulderY,shoulderX + targetX,shoulderY + targetY) - 90;
->>>>>>> wyatt
 	
 
 

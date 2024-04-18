@@ -16,6 +16,11 @@ reach = 64;
 
 fistSpeed = 7.5
 
+function isHitting()
+{
+	return hit > cooldownFrames
+}
+
 function moveTowards(start,target,pace)
 {
 	if(abs(target - start) < pace)

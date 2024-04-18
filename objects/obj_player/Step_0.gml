@@ -3,6 +3,7 @@ if(!grounded)
 	if(place_meeting(x,y,obj_floor))
 	{
 		grounded = 1;
+		
 		stopYVelocity()
 	}
 	else if(direction < 180)
@@ -10,8 +11,10 @@ if(!grounded)
 	else
 		addVector(270,downGravity)
 }
-
-
+else 
+{
+	speed *= groundFriction	
+}
 
 if gamepad_is_connected(0)
 {
