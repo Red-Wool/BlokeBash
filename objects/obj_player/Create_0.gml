@@ -8,7 +8,9 @@ gamepad_set_axis_deadzone(0, .1)
 //add velocity vector to character
 function addVector(dir,length)
 {
-	
+	show_debug_message(dir)
+  show_debug_message(length)
+  show_debug_message("apply")
 if(speed < 0.1)
 {
 	direction = dir
@@ -17,30 +19,49 @@ if(speed < 0.1)
 }
 
  xOri = speed*cos(degtorad(direction));
- yOri = speed*sin(degtorad(direction));
+ yOri = -speed*sin(degtorad(direction));
  xNew = length*cos(degtorad(dir));
- yNew = length*sin(degtorad(dir));
+ yNew = -length*sin(degtorad(dir));
  direction = point_direction(0,0,xOri+xNew, yOri+yNew) //radtodeg(arctan((yOri+yNew)/(xOri+xNew)))
-  show_debug_message(direction)
+  
   //show_debug_message(xOri, " ", xNew)
 
- if abs(direction) > 1
+
+ /*if abs(direction) > 1
  {
 	 if(yOri+yNew > 0 && direction > 181)
 	 {
-		 direction = -direction;
+		 direction = 360-direction;
 	 }
 	 else if(yOri+yNew < 0 && direction < 179)
 	 {
-		 direction = -direction;
+		 direction = 360-direction;
 	 }
- }
+ }*/
  
  speed = sqrt(sqr(yOri+yNew) + sqr(xOri+xNew))
 }
+
+function processPhysics()
+{
+	
+}
+
 //set Y velocity to 0
 function stopYVelocity()
 {
+	for (var i = 0; i < 10; i++)
+	{
+		if(place_meeting(x,y,obj_floor))
+		{
+			y -= 1	
+		}
+		else
+		{
+			break
+		}
+	}
+	
 	xOri = speed*cos(degtorad(direction));
 	speed = xOri;
 	if(xOri >= 0)
@@ -65,6 +86,11 @@ function death()
 {
 	
 }
+
+xOri = 0;
+xNew = 0;
+yOri = 0;
+yNew = 0;
 
 maxHP = 5000;
 hp = maxHP;

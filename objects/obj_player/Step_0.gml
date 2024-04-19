@@ -40,6 +40,10 @@ else
 
 }
 
+show_debug_message(string(xOri) + " " + string(xNew))
+  show_debug_message(string(yOri) + " " + string(yNew))
+  show_debug_message(direction)
+
 x += haxis * moveSpeed
 	
 if(vaxis > .5 && grounded)

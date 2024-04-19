@@ -27,6 +27,8 @@ if(hit)
 			o.addVector(image_angle+90,10)
 			p = 0;
 		}
+		
+		
 	}
 	
 	if(!hit)
