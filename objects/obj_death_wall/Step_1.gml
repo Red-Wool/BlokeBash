@@ -45,7 +45,7 @@ if instance_place(x, y, obj_hand) //Hitting Arm
 	var arm = instance_place(x, y, obj_hand)
 	if arm.isHitting()
 	{
-		global.screen_manager.hit_wall(side_x * .01, side_y * .008)
+		global.screen_manager.hit_wall(side_x * .005, side_y * .008)
 	}
 
 }

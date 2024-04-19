@@ -34,6 +34,25 @@ if(!grounded)
 		addVector(270,upGravity)
 	else
 		addVector(270,downGravity)
+	
+	
+	xOri = speed*cos(degtorad(direction));
+	if -sign(haxis) = sign(xOri)
+	{
+		yOri = -speed*sin(degtorad(direction));
+		if abs(xOri) > 1
+		{
+			//XOri = -speed*sin(degtorad(direction));
+		
+			xOri *= airDecay
+			
+			show_debug_message(xOri)
+			
+			direction = point_direction(0,0,xOri, yOri)
+			speed = sqrt(sqr(yOri) + sqr(xOri))
+		}
+	}
+	
 }
 else 
 {
@@ -69,12 +88,16 @@ if(place_meeting(x,y,obj_death_wall))
 
 x += haxis * moveSpeed
 
-
-
-if(vaxis > .5 && grounded)
+if (grounded)
 {
+	addVector(haxis > 0 ? 0 : 180, abs(haxis) * moveVelocity)
+
+
+	if(vaxis > .5)
+	{
 		addVector(90,14)
 		grounded = 0;
+	}
 }
 
 handObj.shoulderX = x;

@@ -18,7 +18,7 @@ reach = 64;
 
 fistSpeed = 7.5
 punchVelocityAirScale = .08
-punchVelocityGroundScale = .04
+punchVelocityGroundScale = .06
 
 function isHitting()
 {

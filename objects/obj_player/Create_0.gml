@@ -108,6 +108,35 @@ function touchWall(wall)
 			show_debug_message(xOri)
 			
 			direction = point_direction(0,0,xOri, yOri)
+			speed = sqrt(sqr(yOri) + sqr(xOri))
+		}
+	}
+	else if wall.side_y != 0
+	{
+		for (var i = 0; i < 10; i++)
+		{
+			if(place_meeting(x,y,obj_death_wall))
+			{
+				y -= sign(wall.side_y)
+			}
+			else
+			{
+				break
+			}
+		}
+		
+		xOri = speed*cos(degtorad(direction));
+		yOri = -speed*sin(degtorad(direction));
+		if abs(yOri) > 1
+		{
+			//XOri = -speed*sin(degtorad(direction));
+		
+			yOri = 0
+			
+			show_debug_message(yOri)
+			
+			direction = point_direction(0,0,xOri, yOri)
+			speed = sqrt(sqr(yOri) + sqr(xOri))
 		}
 	}
 }
@@ -140,9 +169,11 @@ grounded = 0;
 upGravity = .40;
 downGravity = .50;
 moveSpeed = 5;
+moveVelocity = .2;
 
-groundFriction = .95;
+groundFriction = .9;
 moveFriction = .95;
+airDecay = .99;
 
 wallBounceDecay = .5;
 
