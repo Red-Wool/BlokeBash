@@ -1,3 +1,5 @@
+playerOwner = pointer_null
+
 shoulderX = 0;
 shoulderY = 0;
 
@@ -15,6 +17,8 @@ prevX = 0;
 reach = 64;
 
 fistSpeed = 7.5
+punchVelocityAirScale = .08
+punchVelocityGroundScale = .04
 
 function isHitting()
 {

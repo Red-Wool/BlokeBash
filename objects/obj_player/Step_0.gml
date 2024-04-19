@@ -1,21 +1,3 @@
-if(!grounded)
-{
-	if(place_meeting(x,y,obj_floor))
-	{
-		grounded = 1;
-		
-		stopYVelocity()
-	}
-	else if(direction < 180)
-		addVector(270,upGravity)
-	else
-		addVector(270,downGravity)
-}
-else 
-{
-	speed *= groundFriction	
-}
-
 if gamepad_is_connected(0)
 {
 	//Get Left Stick Input
@@ -40,12 +22,55 @@ else
 
 }
 
-show_debug_message(string(xOri) + " " + string(xNew))
-  show_debug_message(string(yOri) + " " + string(yNew))
-  show_debug_message(direction)
+if(!grounded)
+{
+	if(place_meeting(x,y,obj_floor))
+	{
+		grounded = 1;
+		
+		stopYVelocity()
+	}
+	else if(direction < 180)
+		addVector(270,upGravity)
+	else
+		addVector(270,downGravity)
+}
+else 
+{
+	speed *= groundFriction	
+	if abs(haxis) > .1
+	{
+		speed *= moveFriction	
+	}
+	
+	for (var i = 0; i < 10; i++)
+	{
+		if(place_meeting(x,y,obj_floor))
+		{
+			y -= 1	
+		}
+		else
+		{
+			break
+		}
+	}
+}
+
+if(place_meeting(x,y,obj_death_wall))
+{
+	touchWall(instance_place(x,y,obj_death_wall))	
+}
+
+
+
+//show_debug_message(string(xOri) + " " + string(xNew))
+  //show_debug_message(string(yOri) + " " + string(yNew))
+  //show_debug_message(direction)
 
 x += haxis * moveSpeed
-	
+
+
+
 if(vaxis > .5 && grounded)
 {
 		addVector(90,14)
