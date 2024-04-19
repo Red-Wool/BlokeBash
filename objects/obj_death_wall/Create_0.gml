@@ -1,6 +1,8 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+canHit = true
+
 minVelocityHurt = .001
 damageScale = 100000
 stunScale = 100

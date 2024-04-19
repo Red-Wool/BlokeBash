@@ -81,6 +81,7 @@ function touchWall(wall)
 {
 	if wall.checkScreenCrash()
 	{
+		global.camera_fx.screen_shake(10,15)
 		wall.applyScreenCrash(self)
 	}
 	else if wall.side_x != 0
@@ -131,7 +132,7 @@ function touchWall(wall)
 		{
 			//XOri = -speed*sin(degtorad(direction));
 		
-			yOri = 0
+			yOri = max(0, yOri)
 			
 			show_debug_message(yOri)
 			

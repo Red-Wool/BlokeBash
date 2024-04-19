@@ -35,6 +35,7 @@ if(hit)
 		o = instance_place(x,y,obj_dummy)
 		if(instance_exists(o) && p)
 		{
+			global.camera_fx.hit_stop(8, 1)
 			o.addVector(image_angle+90,10)
 			p = 0;
 		}
