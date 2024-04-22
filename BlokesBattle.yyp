@@ -26,8 +26,12 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Sprites","folderPath":"folders/Sprites.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Tile Sets","folderPath":"folders/Tile Sets.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Timelines","folderPath":"folders/Timelines.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"JoshAnimations","folderPath":"folders/Sprites/JoshAnimations.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"JoshIdle","folderPath":"folders/Sprites/JoshAnimations/JoshIdle.yy",},
   ],
-  "IncludedFiles": [],
+  "IncludedFiles": [
+    {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"JoshIdle0034.mp4","CopyToMask":-1,"filePath":"datafiles",},
+  ],
   "isEcma": false,
   "LibraryEmitters": [],
   "MetaData": {
@@ -36,6 +40,7 @@
   "resources": [
     {"id":{"name":"obj_game_manager","path":"objects/obj_game_manager/obj_game_manager.yy",},},
     {"id":{"name":"spr_arm1","path":"sprites/spr_arm1/spr_arm1.yy",},},
+    {"id":{"name":"spr_JoshJacketIdle","path":"sprites/spr_JoshJacketIdle/spr_JoshJacketIdle.yy",},},
     {"id":{"name":"spr_hand","path":"sprites/spr_hand/spr_hand.yy",},},
     {"id":{"name":"GrassScenery","path":"sprites/GrassScenery/GrassScenery.yy",},},
     {"id":{"name":"obj_guac","path":"objects/obj_guac/obj_guac.yy",},},
