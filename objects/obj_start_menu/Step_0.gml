@@ -159,10 +159,21 @@ switch cutsceneSceneNum
 		
 		break
 	case 10:
+		screen_x = .5
+		screen_y = .5
+		
+		resize_window(.4)
+		
+		set_window_pos()
 	
 }
 
 if keyboard_check_pressed(vk_space)
 {
-	room_goto(GameScene)
+	if cutsceneSceneNum != 10
+	{
+		cutsceneSceneNum = 10	
+	}
+	else
+		room_goto(GameScene)
 }

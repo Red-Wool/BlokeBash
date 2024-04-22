@@ -37,6 +37,7 @@
     {"name":"obj_start_menu","order":10,"path":"objects/obj_start_menu/obj_start_menu.yy",},
     {"name":"spr_guac","order":3,"path":"sprites/spr_guac/spr_guac.yy",},
     {"name":"obj_dummy","order":8,"path":"objects/obj_dummy/obj_dummy.yy",},
+    {"name":"SelectMenu","order":2,"path":"rooms/SelectMenu/SelectMenu.yy",},
     {"name":"obj_floor","order":6,"path":"objects/obj_floor/obj_floor.yy",},
     {"name":"spr_floor","order":7,"path":"sprites/spr_floor/spr_floor.yy",},
     {"name":"spr_hand_active","order":8,"path":"sprites/spr_hand_active/spr_hand_active.yy",},
