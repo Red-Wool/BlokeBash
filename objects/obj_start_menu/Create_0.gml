@@ -1,3 +1,6 @@
+center_x = 0
+center_y = 0
+
 
 screen_x = .5
 screen_y = .5

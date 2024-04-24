@@ -44,7 +44,7 @@
             {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","objectId":{"name":"obj_death_wall","path":"objects/obj_death_wall/obj_death_wall.yy",},"propertyId":{"name":"side_y","path":"objects/obj_death_wall/obj_death_wall.yy",},"value":"1",},
           ],"rotation":90.0,"scaleX":1.0,"scaleY":10.0,"x":5632.0,"y":5888.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
-    {"resourceType":"GMRBackgroundLayer","resourceVersion":"1.0","name":"Background","animationFPS":30.0,"animationSpeedType":0,"colour":4278190080,"depth":100,"effectEnabled":true,"effectType":"_effect_windblown_particles","gridX":32,"gridY":32,"hierarchyFrozen":false,"hspeed":0.0,"htiled":true,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[
+    {"resourceType":"GMRBackgroundLayer","resourceVersion":"1.0","name":"Background","animationFPS":30.0,"animationSpeedType":0,"colour":4294967295,"depth":100,"effectEnabled":true,"effectType":"_effect_windblown_particles","gridX":32,"gridY":32,"hierarchyFrozen":false,"hspeed":0.0,"htiled":true,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[
         {"name":"param_sprite","type":2,"value":"spr_hand",},
         {"name":"param_num_particles","type":0,"value":"60",},
         {"name":"param_particle_spawn_time","type":0,"value":"100",},
@@ -119,7 +119,7 @@
         {"name":"param_dragcoeff","type":0,"value":"1",},
         {"name":"param_grav_accel","type":0,"value":"300",},
         {"name":"param_debug_grid","type":0,"value":"0",},
-      ],"spriteId":null,"stretch":false,"userdefinedAnimFPS":false,"userdefinedDepth":false,"visible":true,"vspeed":0.0,"vtiled":true,"x":0,"y":0,},
+      ],"spriteId":{"name":"GrassScenery","path":"sprites/GrassScenery/GrassScenery.yy",},"stretch":false,"userdefinedAnimFPS":false,"userdefinedDepth":false,"visible":true,"vspeed":0.0,"vtiled":true,"x":0,"y":0,},
   ],
   "parent": {
     "name": "Rooms",

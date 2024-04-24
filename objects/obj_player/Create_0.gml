@@ -3,6 +3,9 @@
 
 gamepad_set_axis_deadzone(0, .1)
 
+show_debug_message(global.player_one_character)
+sprite_index = global.player_one_character == 1 ? spr_dummy : spr_body
+
 //hand = instance_create_depth(x,y,-1,obj_test_arm)
 
 //add velocity vector to character
@@ -155,13 +158,15 @@ function playerHurt(damage, stun)
 
 function death()
 {
-	
+	global.game_manager.end_game(playerNum)
 }
 
 xOri = 0;
 xNew = 0;
 yOri = 0;
 yNew = 0;
+
+playerNum = 0
 
 maxHP = 5000;
 hp = maxHP;

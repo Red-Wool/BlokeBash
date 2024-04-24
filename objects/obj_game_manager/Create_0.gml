@@ -3,14 +3,22 @@ global.game_manager = self
 player_one = instance_create_depth(5500,5300,0,obj_player)
 player_two = pointer_null
 
+audio_play_sound(JazzyNYC, 10, 1)
+
+winner = 0
+
 temp_player_one_hp = 50
 temp_player_two_hp = 60
 
-is_playing = false
+is_playing = true
 
 game_time = 99.9
 
-function end_game(_winner)
+function end_game(_death)
 {
-	is_playing = true
+	show_debug_message(string(_death) + "winnnnner!")
+	winner = 0 == _death ? player_two : player_one
+	is_playing = false
+	
+	global.camera_fx.hit_stop(10, 20)
 }

@@ -7,6 +7,8 @@ if(keyboard_check_pressed(ord("A")) || mouse_check_button_pressed(mb_left))
 		sprite_index = spr_hand_active
 		hit = attackFrames + cooldownFrames;
 		
+		
+		
 		var mag = point_distance(currentX, currentY, targetX, targetY)
 		if mag > 1
 		{
@@ -19,6 +21,8 @@ if(keyboard_check_pressed(ord("A")) || mouse_check_button_pressed(mb_left))
 				playerOwner.addVector(point_direction(0,0, targetX-currentX, 0), mag * punchVelocityGroundScale)
 			}
 		}
+		
+		audio_play_sound(HitWhiff, 10, 0, 1, 0, .9 + mag * .008)
 	}
 }
 

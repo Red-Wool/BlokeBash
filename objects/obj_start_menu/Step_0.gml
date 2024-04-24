@@ -100,6 +100,8 @@ switch cutsceneSceneNum
 			counter++
 		}
 		
+		window_set_caption(string(counter))
+		
 		set_window_pos()
 		
 		if counter > 225
@@ -107,6 +109,7 @@ switch cutsceneSceneNum
 			cutsceneSceneNum++
 			cutsceneTimer = 0
 			counter = 0
+			window_set_caption("The Shadow Wizard Money Gang presents...")
 			
 		}
 		
@@ -129,11 +132,11 @@ switch cutsceneSceneNum
 		
 		screen_x = cos((pi/2) - win*t*20) * .3 + .5
 		screen_y = sin((pi/2) - win*t*20) * .3 + .5
-		resize_window(win * .1)
+		resize_window(.1 + (win-1) * .1 * (1-cutsceneTimer*.02))
 		
 		set_window_pos()
 		
-		if cutsceneTimer > 100
+		if cutsceneTimer > 50
 		{
 			cutsceneSceneNum++
 			cutsceneTimer = 0
@@ -159,6 +162,9 @@ switch cutsceneSceneNum
 		
 		break
 	case 10:
+		
+		window_set_caption("Bloke Bash")
+		
 		screen_x = .5
 		screen_y = .5
 		
@@ -168,6 +174,9 @@ switch cutsceneSceneNum
 	
 }
 
+x = center_x + screen_pos_x// (sin(test_timer * .01) * 500.)// - screen_pos_x
+y = center_y + screen_pos_y
+
 if keyboard_check_pressed(vk_space)
 {
 	if cutsceneSceneNum != 10
@@ -175,5 +184,5 @@ if keyboard_check_pressed(vk_space)
 		cutsceneSceneNum = 10	
 	}
 	else
-		room_goto(GameScene)
+		room_goto(SelectMenu)
 }
