@@ -39,13 +39,23 @@ if instance_place(x, y, obj_player) //Hitting Player
 	}
 }*/
 
-if instance_place(x, y, obj_hand) //Hitting Arm
+if  instance_place(x, y, obj_hand) //Hitting Arm
 {
 	
+	
+	
 	var arm = instance_place(x, y, obj_hand)
-	if arm.isHitting()
+	if canHit and arm.isHitting()
 	{
-		global.screen_manager.hit_wall(side_x * .005, side_y * .008)
+		audio_play_sound(HitDoor, 10, 0, 1, 0, random_range(.9,1.1) + side_y*.1)
+		
+		canHit = false
+		alarm[0] = 2
+		
+		global.camera_fx.screen_shake(10,5)
+		global.camera_fx.hit_stop(15, 2)
+		
+		global.screen_manager.hit_wall(side_x * .008, side_y * .014)
 	}
 
 }

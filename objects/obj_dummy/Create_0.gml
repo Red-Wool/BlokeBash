@@ -1,5 +1,6 @@
 function addVector(dir,length)
 {
+	
 if(speed == 0)
 {
 	direction = dir

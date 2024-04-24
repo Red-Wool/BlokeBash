@@ -1,10 +1,12 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+canHit = true
+
 minVelocityHurt = .001
 damageScale = 100000
-stunScale = 100
-velocityScale = 1000
+stunScale = 200
+velocityScale = 3000
 
 function checkScreenCrash()
 {

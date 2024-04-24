@@ -1,16 +1,29 @@
 global.game_manager = self
 
 player_one = instance_create_depth(5500,5300,0,obj_player)
-player_two = pointer_null
+player_two = instance_create_depth(5600,5300,0,obj_dummy)
+
+audio_play_sound(JazzyNYC, 10, 1)
+
+winner = 0
 
 temp_player_one_hp = 50
 temp_player_two_hp = 60
 
-is_playing = false
+is_playing = true
 
 game_time = 99.9
 
-function end_game(_winner)
+function player_facing(player_num)
 {
-	is_playing = true
+	return sign(player_num == 1 ? player_one.x-player_two.x : player_two.x-player_one.x)
+}
+
+function end_game(_death)
+{
+	show_debug_message(string(_death) + "winnnnner!")
+	winner = 0 == _death ? player_two : player_one
+	is_playing = false
+	
+	global.camera_fx.hit_stop(10, 20)
 }

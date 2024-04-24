@@ -3,6 +3,9 @@
 
 gamepad_set_axis_deadzone(0, .1)
 
+show_debug_message(global.player_one_character)
+sprite_index = global.player_one_character == 1 ? spr_dummy : spr_body
+
 //hand = instance_create_depth(x,y,-1,obj_test_arm)
 
 //add velocity vector to character
@@ -81,6 +84,7 @@ function touchWall(wall)
 {
 	if wall.checkScreenCrash()
 	{
+		global.camera_fx.screen_shake(10,15)
 		wall.applyScreenCrash(self)
 	}
 	else if wall.side_x != 0
@@ -131,7 +135,7 @@ function touchWall(wall)
 		{
 			//XOri = -speed*sin(degtorad(direction));
 		
-			yOri = 0
+			yOri = max(0, yOri)
 			
 			show_debug_message(yOri)
 			
@@ -154,13 +158,17 @@ function playerHurt(damage, stun)
 
 function death()
 {
-	
+	global.game_manager.end_game(playerNum)
 }
 
 xOri = 0;
 xNew = 0;
 yOri = 0;
 yNew = 0;
+
+playerNum = 0
+
+
 
 maxHP = 5000;
 hp = maxHP;
@@ -188,6 +196,7 @@ handObj.shoulderY = y
 handObj.holdX = x
 handObj.holdY = y
 
+
 hitStun = 0;
 
 
@@ -199,3 +208,6 @@ jumpingSprite = tempJump
 hitSprite = 0;
 deathSprite = 0;
 airSprite = tempAir;
+//Small variables do not touch
+s = 1
+
