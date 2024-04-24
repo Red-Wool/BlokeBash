@@ -47,9 +47,35 @@ else
 	currentX = moveTowards(currentX,targetX,fistSpeed * abs(cos(theta)));
 	currentY = moveTowards(currentY,targetY,fistSpeed * abs(sin(theta)));
 	
+	if(abs(targetX == 0) && abs(targetY == 0))
+	{
+		targetX = 1;
+		targetY = 1;
+	}
+	
 	x = shoulderX + currentX;
 	y = shoulderY + currentY;
-	image_angle = point_direction(shoulderX,shoulderY,shoulderX + targetX,shoulderY + targetY) - 90;
+	shoulderHandDistance = point_distance(shoulderX,shoulderY,x,y);
+	UpperArmObj.direction = point_direction(shoulderX,shoulderY,x,y)
+	UpperArmObj.x = shoulderX
+	UpperArmObj.y = shoulderY
+	
+	theta = ((sqr(shoulderHandDistance) + sqr(UpperArmLength) - sqr(LowerArmLength))/(2*shoulderHandDistance*UpperArmLength))
+	if(abs(theta) < 1)
+	{
+		theta = radtodeg(arccos(theta))
+	}
+	else
+	{
+		theta = 90;
+	}
+
+	UpperArmObj.image_angle = UpperArmObj.direction - (theta);
+	LowerArmObj.x = shoulderX + lengthdir_x(UpperArmLength,UpperArmObj.image_angle)
+	LowerArmObj.y = shoulderY + lengthdir_y(UpperArmLength,UpperArmObj.image_angle)
+	LowerArmObj.image_angle = point_direction(LowerArmObj.x,LowerArmObj.y,x,y)
+	
+	image_angle = 	LowerArmObj.image_angle
 	
 
 

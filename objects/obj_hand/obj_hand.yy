@@ -30,8 +30,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_hand",
-    "path": "sprites/spr_hand/spr_hand.yy",
+    "name": "spr_JoshHand",
+    "path": "sprites/spr_JoshHand/spr_JoshHand.yy",
   },
   "spriteMaskId": null,
   "visible": true,
