@@ -22,6 +22,12 @@ else
 
 }
 
+if !global.game_manager.is_playing
+{
+	haxis = 0
+	vaxis = 0
+}
+
 if hitStun > 0
 {
 	addVector(haxis > 0 ? 0 : 180, abs(haxis)*.2)

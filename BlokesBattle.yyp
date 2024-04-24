@@ -59,6 +59,7 @@
     {"id":{"name":"obj_camera_fx","path":"objects/obj_camera_fx/obj_camera_fx.yy",},},
     {"id":{"name":"spr_arm2","path":"sprites/spr_arm2/spr_arm2.yy",},},
     {"id":{"name":"spr_dummy","path":"sprites/spr_dummy/spr_dummy.yy",},},
+    {"id":{"name":"spr_blokebashNYU","path":"sprites/spr_blokebashNYU/spr_blokebashNYU.yy",},},
     {"id":{"name":"obj_screen_manager","path":"objects/obj_screen_manager/obj_screen_manager.yy",},},
     {"id":{"name":"obj_test_screen","path":"objects/obj_test_screen/obj_test_screen.yy",},},
     {"id":{"name":"obj_start_menu","path":"objects/obj_start_menu/obj_start_menu.yy",},},

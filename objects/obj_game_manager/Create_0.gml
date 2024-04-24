@@ -11,6 +11,7 @@ temp_player_one_hp = 50
 temp_player_two_hp = 60
 
 is_playing = true
+can_leave = false
 
 game_time = 99.9
 
@@ -24,6 +25,7 @@ function end_game(_death)
 	show_debug_message(string(_death) + "winnnnner!")
 	winner = 0 == _death ? player_two : player_one
 	is_playing = false
+	can_leave = true
 	
 	global.camera_fx.hit_stop(10, 20)
 }

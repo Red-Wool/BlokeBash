@@ -39,6 +39,7 @@
     {"name":"obj_camera_fx","order":9,"path":"objects/obj_camera_fx/obj_camera_fx.yy",},
     {"name":"spr_arm2","order":2,"path":"sprites/spr_arm2/spr_arm2.yy",},
     {"name":"spr_dummy","order":10,"path":"sprites/spr_dummy/spr_dummy.yy",},
+    {"name":"spr_blokebashNYU","order":15,"path":"sprites/spr_blokebashNYU/spr_blokebashNYU.yy",},
     {"name":"obj_screen_manager","order":3,"path":"objects/obj_screen_manager/obj_screen_manager.yy",},
     {"name":"obj_test_screen","order":4,"path":"objects/obj_test_screen/obj_test_screen.yy",},
     {"name":"obj_start_menu","order":10,"path":"objects/obj_start_menu/obj_start_menu.yy",},
