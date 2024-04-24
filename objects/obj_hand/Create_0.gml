@@ -14,9 +14,9 @@ currentY = 0;
 
 prevX = 0;
 
-reach = 64;
+reach = 180;
 
-fistSpeed = 7.5
+fistSpeed = 12.5
 punchVelocityAirScale = .08
 punchVelocityGroundScale = .06
 
@@ -40,3 +40,9 @@ p = 0;
 hit = 0;
 attackFrames = 30;
 cooldownFrames = 20;
+
+UpperArmLength = 100;
+LowerArmLength = 100;
+shoulderHandDistance = 0;
+UpperArmObj = instance_create_depth(x,y,-10,obj_upperArm)
+LowerArmObj = instance_create_depth(x,y,-10,obj_lowerArm)

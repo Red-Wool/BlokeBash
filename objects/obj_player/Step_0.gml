@@ -45,6 +45,7 @@ if(!grounded)
 {
 	if(place_meeting(x,y,obj_floor))
 	{
+		sprite_index = landingSprite;
 		grounded = 1;
 		
 		stopYVelocity()
@@ -99,13 +100,29 @@ if(place_meeting(x,y,obj_death_wall))
 	touchWall(instance_place(x,y,obj_death_wall))	
 }
 
-
+if(sprite_index != jumpingSprite && sprite_index != landingSprite)
+{
+	if(grounded)
+	{
+		if(haxis > .05)
+			sprite_index = walkSprite
+		else if(haxis < -.05)
+		{
+			sprite_index = backWalkSprite
+		}
+		else
+			sprite_index = idleSprite
+	}
+	
+}
 
 //show_debug_message(string(xOri) + " " + string(xNew))
   //show_debug_message(string(yOri) + " " + string(yNew))
   //show_debug_message(direction)
 
 x += haxis * moveSpeed
+
+
 
 if (grounded)
 {
@@ -114,6 +131,7 @@ if (grounded)
 
 	if(vaxis > .5)
 	{
+		sprite_index = jumpingSprite
 		addVector(90,14)
 		grounded = 0;
 	}

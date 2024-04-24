@@ -196,5 +196,18 @@ handObj.shoulderY = y
 handObj.holdX = x
 handObj.holdY = y
 
+
+hitStun = 0;
+
+
+idleSprite = spr_JoshJacketIdle;
+walkSprite = spr_JoshJacketWalk;
+backWalkSprite = spr_JoshJacketBackWalk;
+landingSprite = tempLanding
+jumpingSprite = tempJump
+hitSprite = 0;
+deathSprite = 0;
+airSprite = tempAir;
 //Small variables do not touch
 s = 1
+

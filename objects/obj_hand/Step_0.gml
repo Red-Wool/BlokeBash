@@ -4,7 +4,6 @@ if(keyboard_check_pressed(ord("A")) || mouse_check_button_pressed(mb_left))
 	if(!hit)
 	{
 		p = 1;
-		sprite_index = spr_hand_active
 		hit = attackFrames + cooldownFrames;
 		
 		
@@ -32,7 +31,6 @@ if(hit)
 	
 	if(hit <= cooldownFrames)
 	{
-		sprite_index = spr_hand_end;
 	}
 	else
 	{
@@ -47,10 +45,6 @@ if(hit)
 		
 	}
 	
-	if(!hit)
-	{
-		sprite_index = spr_hand
-	}
 }
 
 
