@@ -1,7 +1,7 @@
 global.game_manager = self
 
 player_one = instance_create_depth(5500,5300,0,obj_player)
-player_two = pointer_null
+player_two = instance_create_depth(5600,5300,0,obj_dummy)
 
 audio_play_sound(JazzyNYC, 10, 1)
 
@@ -13,6 +13,11 @@ temp_player_two_hp = 60
 is_playing = true
 
 game_time = 99.9
+
+function player_facing(player_num)
+{
+	return sign(player_num == 1 ? player_one.x-player_two.x : player_two.x-player_one.x)
+}
 
 function end_game(_death)
 {

@@ -168,6 +168,8 @@ yNew = 0;
 
 playerNum = 0
 
+
+
 maxHP = 5000;
 hp = maxHP;
 
@@ -193,3 +195,6 @@ handObj.shoulderX = x
 handObj.shoulderY = y
 handObj.holdX = x
 handObj.holdY = y
+
+//Small variables do not touch
+s = 1

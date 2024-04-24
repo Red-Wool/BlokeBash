@@ -22,6 +22,19 @@ else
 
 }
 
+if hitStun > 0
+{
+	addVector(haxis > 0 ? 0 : 180, abs(haxis)*.2)
+	addVector(vaxis > 0 ? 90 : 270, abs(vaxis)*.2)
+	
+	haxis = 0	
+	vaxis = 0	
+	
+	grounded = false
+}
+
+hitStun--
+
 if(!grounded)
 {
 	if(place_meeting(x,y,obj_floor))
