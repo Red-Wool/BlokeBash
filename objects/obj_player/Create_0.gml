@@ -176,7 +176,7 @@ hp = maxHP;
 grounded = 0;
 upGravity = .40;
 downGravity = .50;
-moveSpeed = 5;
+moveSpeed = 8;
 moveVelocity = .2;
 
 groundFriction = .9;
