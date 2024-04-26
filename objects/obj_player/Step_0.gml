@@ -33,7 +33,22 @@ if keyboard_check_pressed(vk_space) and moveBursts >= 1
 	if grounded
 		addVector(haxis >= 0 ? 0 : 180, moveBurstGroundForce)
 	else
+	{
+		
+		xOri = speed*cos(degtorad(direction));
+		yOri = -speed*sin(degtorad(direction));
+		if abs(yOri) > 1
+		{
+			yOri *= .1
+			
+			direction = point_direction(0,0,xOri, yOri)
+			speed = sqrt(sqr(yOri) + sqr(xOri))
+		}
+		
+		
 		addVector(point_direction(0,0,haxis,-vaxis), moveBurstAirForce)
+		
+	}
 }
 
 if !global.game_manager.is_playing
