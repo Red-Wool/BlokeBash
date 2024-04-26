@@ -70,14 +70,16 @@ else
 		theta = 90;
 	}
 
-	UpperArmObj.image_angle = UpperArmObj.direction - (theta);
+	UpperArmObj.image_angle = UpperArmObj.direction - s*(theta);
 	LowerArmObj.x = shoulderX + lengthdir_x(UpperArmLength,UpperArmObj.image_angle)
 	LowerArmObj.y = shoulderY + lengthdir_y(UpperArmLength,UpperArmObj.image_angle)
 	LowerArmObj.image_angle = point_direction(LowerArmObj.x,LowerArmObj.y,x,y)
 	
 	image_angle = 	LowerArmObj.image_angle
 	
-
+	image_yscale = s;
+	LowerArmObj.image_yscale = s;
+	UpperArmObj.image_yscale = s;
 
 
 

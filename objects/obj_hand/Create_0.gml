@@ -16,7 +16,7 @@ prevX = 0;
 
 reach = 180;
 
-fistSpeed = 12.5
+fistSpeed = 25
 punchVelocityAirScale = .04
 punchVelocityGroundScale = .06
 
@@ -35,6 +35,8 @@ function moveTowards(start,target,pace)
 }
 
 cursorlock = 0;
+
+s = 1
 
 p = 0;
 hit = 0;

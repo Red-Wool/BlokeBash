@@ -43,9 +43,9 @@ hitStun--
 
 if(!grounded)
 {
-	if(place_meeting(x,y,obj_floor))
+	if(place_meeting(x,y,obj_floor) && sprite_index != jumpingSpriteA)
 	{
-		sprite_index = landingSprite;
+		sprite_index = landingSpriteA;
 		grounded = 1;
 		
 		stopYVelocity()
@@ -66,7 +66,6 @@ if(!grounded)
 		
 			xOri *= airDecay
 			
-			show_debug_message(xOri)
 			
 			direction = point_direction(0,0,xOri, yOri)
 			speed = sqrt(sqr(yOri) + sqr(xOri))
@@ -100,7 +99,7 @@ if(place_meeting(x,y,obj_death_wall))
 	touchWall(instance_place(x,y,obj_death_wall))	
 }
 
-if(sprite_index != jumpingSprite && sprite_index != landingSprite)
+if(sprite_index != jumpingSpriteA && sprite_index != landingSpriteA && sprite_index != landingSpriteB)
 {
 	if(grounded)
 	{
@@ -131,7 +130,7 @@ if (grounded)
 
 	if(vaxis > .5)
 	{
-		sprite_index = jumpingSprite
+		sprite_index = jumpingSpriteA
 		addVector(90,14)
 		grounded = 0;
 	}
