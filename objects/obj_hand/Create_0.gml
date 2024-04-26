@@ -16,7 +16,10 @@ prevX = 0;
 
 reach = 180;
 
+fistPower = 0
 fistSpeed = 12.5
+hitFistSpeed = 25
+
 punchVelocityAirScale = .04
 punchVelocityGroundScale = .06
 

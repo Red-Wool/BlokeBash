@@ -1,4 +1,4 @@
-if(keyboard_check_pressed(ord("A")) || mouse_check_button_pressed(mb_left))
+if(keyboard_check_pressed(ord("J")) || mouse_check_button_pressed(mb_left))
 {
 	//&& prevX < currentX
 	if(!hit)

@@ -33,7 +33,7 @@ else
 	}
 
 }
-	if(keyboard_check_pressed(vk_space))
+	if(keyboard_check_pressed(vk_control))
 	{
 		cursorlock = cursorlock ? 0 : 1;
 		if(cursorlock)
@@ -41,11 +41,13 @@ else
 		else
 			window_set_cursor(cr_default)
 	}
-
+	
+	var currentSpeed = hit > cooldownFrames ? hitFistSpeed : fistSpeed
+	
 	prevX = currentX;
 	theta = degtorad(point_direction(currentX,currentY,targetX,targetY))
-	currentX = moveTowards(currentX,targetX,fistSpeed * abs(cos(theta)));
-	currentY = moveTowards(currentY,targetY,fistSpeed * abs(sin(theta)));
+	currentX = moveTowards(currentX,targetX,currentSpeed * abs(cos(theta)));
+	currentY = moveTowards(currentY,targetY,currentSpeed * abs(sin(theta)));
 	
 	if(abs(targetX == 0) && abs(targetY == 0))
 	{
