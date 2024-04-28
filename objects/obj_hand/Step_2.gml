@@ -42,7 +42,7 @@ else
 			window_set_cursor(cr_default)
 	}
 	
-	var currentSpeed = hit > cooldownFrames ? hitFistSpeed : fistSpeed
+	var currentSpeed = hit > currentCooldown ? currentFistSpeed : fistSpeed
 	
 	prevX = currentX;
 	theta = degtorad(point_direction(currentX,currentY,targetX,targetY))

@@ -4,7 +4,11 @@ if(keyboard_check_pressed(ord("J")) || mouse_check_button_pressed(mb_left))
 	if(!hit)
 	{
 		p = 1;
-		hit = attackFrames + cooldownFrames;
+		
+		currentCooldown = cooldownSuperFrames
+		hit = attackBasicFrames + currentCooldown;
+		
+		currentFistSpeed = hitFistSpeed
 		
 		
 		
@@ -31,9 +35,11 @@ if(keyboard_check_pressed(ord("K")) || mouse_check_button_pressed(mb_right))
 	if(!hit)
 	{
 		p = 1;
-		hit = attackFrames + cooldownFrames;
 		
+		currentCooldown = cooldownSuperFrames
+		hit = attackSuperFrames + currentCooldown;
 		
+		currentFistSpeed = superFistSpeed
 		
 		var mag = point_distance(currentX, currentY, targetX, targetY)
 		if mag > 1
@@ -56,7 +62,7 @@ if(hit)
 {
 	hit -= 1;
 	
-	if(hit <= cooldownFrames)
+	if(hit <= currentCooldown)
 	{
 	}
 	else

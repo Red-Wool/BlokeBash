@@ -17,6 +17,7 @@ prevX = 0;
 reach = 180;
 
 fistPower = 0
+currentFistSpeed = 0
 fistSpeed = 12.5
 hitFistSpeed = 25
 superFistSpeed = 100
@@ -29,7 +30,7 @@ heavyPunchVelocityGroundScale = .12
 
 function isHitting()
 {
-	return hit > cooldownFrames
+	return hit > currentCooldown
 }
 
 function moveTowards(start,target,pace)
@@ -45,8 +46,11 @@ cursorlock = 0;
 
 p = 0;
 hit = 0;
-attackFrames = 30;
-cooldownFrames = 20;
+attackBasicFrames = 6;
+cooldownBasicFrames = 10;
+
+attackSuperFrames = 30;
+cooldownSuperFrames = 20;
 
 currentAttack = 0
 currentCooldown = 0
