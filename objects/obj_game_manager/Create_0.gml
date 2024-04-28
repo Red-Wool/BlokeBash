@@ -3,7 +3,7 @@ global.game_manager = self
 player_one = instance_create_depth(5500,5300,0,obj_player)
 player_two = instance_create_depth(5600,5300,0,obj_dummy)
 
-audio_play_sound(JazzyNYC, 10, 1)
+//audio_play_sound(JazzyNYC, 10, 1)
 
 winner = 0
 

@@ -52,6 +52,7 @@
     {"name":"obj_start_menu","order":10,"path":"objects/obj_start_menu/obj_start_menu.yy",},
     {"name":"spr_guac","order":3,"path":"sprites/spr_guac/spr_guac.yy",},
     {"name":"spr_JoshJacketBackWalk","order":3,"path":"sprites/spr_JoshJacketBackWalk/spr_JoshJacketBackWalk.yy",},
+    {"name":"HeavyPunch","order":3,"path":"sounds/HeavyPunch/HeavyPunch.yy",},
     {"name":"tempJump","order":4,"path":"sprites/tempJump/tempJump.yy",},
     {"name":"obj_dummy","order":8,"path":"objects/obj_dummy/obj_dummy.yy",},
     {"name":"SelectMenu","order":2,"path":"rooms/SelectMenu/SelectMenu.yy",},

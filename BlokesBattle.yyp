@@ -72,6 +72,7 @@
     {"id":{"name":"obj_start_menu","path":"objects/obj_start_menu/obj_start_menu.yy",},},
     {"id":{"name":"spr_guac","path":"sprites/spr_guac/spr_guac.yy",},},
     {"id":{"name":"spr_JoshJacketBackWalk","path":"sprites/spr_JoshJacketBackWalk/spr_JoshJacketBackWalk.yy",},},
+    {"id":{"name":"HeavyPunch","path":"sounds/HeavyPunch/HeavyPunch.yy",},},
     {"id":{"name":"tempJump","path":"sprites/tempJump/tempJump.yy",},},
     {"id":{"name":"obj_dummy","path":"objects/obj_dummy/obj_dummy.yy",},},
     {"id":{"name":"SelectMenu","path":"rooms/SelectMenu/SelectMenu.yy",},},
