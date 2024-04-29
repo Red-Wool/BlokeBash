@@ -174,20 +174,30 @@ maxHP = 5000;
 hp = maxHP;
 
 grounded = 0;
-upGravity = .40;
-downGravity = .50;
+upGravity = .60;
+downGravity = .80;
 moveSpeed = 8;
 moveVelocity = .2;
 
 groundFriction = .9;
+groundDashFriction = .98;
 moveFriction = .95;
 airDecay = .99;
+
 
 wallBounceDecay = .5;
 
 hitStop = 0;
 hitStun = 0;
 endLag = 0;
+
+moveBursts = 50
+moveBurstGroundForce = 50
+moveBurstAirForce = 20
+
+moveBurstTimer= 0
+moveBurstGroundTime = 3
+moveBurstAirTime = 25
 
 handObj = instance_create_depth(x,y,-10,obj_hand)
 handObj.playerOwner = self

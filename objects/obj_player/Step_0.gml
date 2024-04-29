@@ -17,9 +17,38 @@ if gamepad_is_connected(0)
 }
 else
 {
-	var haxis = (keyboard_check(vk_right) ? 1 : 0) - (keyboard_check(vk_left) ? 1 : 0)
-	var vaxis = (keyboard_check(vk_up) ? 1 : 0) - (keyboard_check(vk_down) ? 1 : 0)
+	var haxis = (keyboard_check(ord("D")) ? 1 : 0) - (keyboard_check(ord("A")) ? 1 : 0)
+	var vaxis = (keyboard_check(ord("W")) ? 1 : 0) - (keyboard_check(ord("S")) ? 1 : 0)
 
+}
+
+moveBurstTimer--
+//MoveBursts
+if keyboard_check_pressed(vk_space) and moveBursts >= 1
+{
+	moveBursts -= 1
+	
+	moveBurstTimer = grounded ? moveBurstGroundTime : moveBurstAirTime
+	
+	if grounded
+		addVector(haxis >= 0 ? 0 : 180, moveBurstGroundForce)
+	else
+	{
+		
+		xOri = speed*cos(degtorad(direction));
+		yOri = -speed*sin(degtorad(direction));
+		if abs(yOri) > 1
+		{
+			yOri *= .1
+			
+			direction = point_direction(0,0,xOri, yOri)
+			speed = sqrt(sqr(yOri) + sqr(xOri))
+		}
+		
+		
+		addVector(point_direction(0,0,haxis,-vaxis), moveBurstAirForce)
+		
+	}
 }
 
 if !global.game_manager.is_playing
@@ -75,8 +104,8 @@ if(!grounded)
 }
 else 
 {
-	speed *= groundFriction	
-	if abs(haxis) > .1
+	speed *= (moveBurstTimer > 0 ? groundDashFriction : groundFriction)
+	if abs(haxis) > .1 and moveBurstTimer <= 0
 	{
 		speed *= moveFriction	
 	}
@@ -103,9 +132,9 @@ if(sprite_index != jumpingSpriteA && sprite_index != landingSpriteA && sprite_in
 {
 	if(grounded)
 	{
-		if(haxis > .05)
+		if(haxis*sign(image_xscale) > .05)
 			sprite_index = walkSprite
-		else if(haxis < -.05)
+		else if(haxis*sign(image_xscale) < -.05)
 		{
 			sprite_index = backWalkSprite
 		}
@@ -131,7 +160,7 @@ if (grounded)
 	if(vaxis > .5)
 	{
 		sprite_index = jumpingSpriteA
-		addVector(90,14)
+		addVector(90,22)
 		grounded = 0;
 	}
 }

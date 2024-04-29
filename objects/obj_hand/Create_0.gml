@@ -16,9 +16,17 @@ prevX = 0;
 
 reach = 180;
 
-fistSpeed = 25
+
+fistPower = 0
+fistSpeed = 12.5
+hitFistSpeed = 25
+superFistSpeed = 100
+
 punchVelocityAirScale = .04
 punchVelocityGroundScale = .06
+
+heavyPunchVelocityAirScale = .06
+heavyPunchVelocityGroundScale = .12
 
 function isHitting()
 {
@@ -42,6 +50,9 @@ p = 0;
 hit = 0;
 attackFrames = 30;
 cooldownFrames = 20;
+
+currentAttack = 0
+currentCooldown = 0
 
 UpperArmLength = 100;
 LowerArmLength = 100;
