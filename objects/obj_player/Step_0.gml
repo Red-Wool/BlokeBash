@@ -1,10 +1,11 @@
-if gamepad_is_connected(0)
+if gamepad_is_connected(playerNum)
 {
 	//Get Left Stick Input
-	var haxis = gamepad_axis_value(0, gp_axislh);
-	var vaxis = -gamepad_axis_value(0, gp_axislv);
+	var haxis = gamepad_axis_value(playerNum, gp_axislh);
+	var vaxis = -gamepad_axis_value(playerNum, gp_axislv);
 	
-
+	if gamepad_button_check_pressed(playerNum,gp_shoulderlb)
+		bursting = 1;
 	/*
 	//Get Right Stick Input
 	haxis = gamepad_axis_value(0, gp_axisrh);
@@ -19,12 +20,13 @@ else
 {
 	var haxis = (keyboard_check(ord("D")) ? 1 : 0) - (keyboard_check(ord("A")) ? 1 : 0)
 	var vaxis = (keyboard_check(ord("W")) ? 1 : 0) - (keyboard_check(ord("S")) ? 1 : 0)
-
+	if keyboard_check_pressed(vk_space)
+		bursting = 1;
 }
 
 moveBurstTimer--
 //MoveBursts
-if keyboard_check_pressed(vk_space) and moveBursts >= 1
+if  bursting and moveBursts >= 1
 {
 	moveBursts -= 1
 	
@@ -50,7 +52,7 @@ if keyboard_check_pressed(vk_space) and moveBursts >= 1
 		
 	}
 }
-
+bursting = 0;
 if !global.game_manager.is_playing
 {
 	haxis = 0
@@ -72,9 +74,9 @@ hitStun--
 
 if(!grounded)
 {
-	if(place_meeting(x,y,obj_floor))
+	if(place_meeting(x,y,obj_floor) && sprite_index != jumpingSpriteA)
 	{
-		sprite_index = landingSprite;
+		sprite_index = landingSpriteA;
 		grounded = 1;
 		
 		stopYVelocity()
@@ -95,7 +97,6 @@ if(!grounded)
 		
 			xOri *= airDecay
 			
-			show_debug_message(xOri)
 			
 			direction = point_direction(0,0,xOri, yOri)
 			speed = sqrt(sqr(yOri) + sqr(xOri))
@@ -129,7 +130,7 @@ if(place_meeting(x,y,obj_death_wall))
 	touchWall(instance_place(x,y,obj_death_wall))	
 }
 
-if(sprite_index != jumpingSprite && sprite_index != landingSprite)
+if(sprite_index != jumpingSpriteA && sprite_index != landingSpriteA && sprite_index != landingSpriteB)
 {
 	if(grounded)
 	{
@@ -160,7 +161,7 @@ if (grounded)
 
 	if(vaxis > .5)
 	{
-		sprite_index = jumpingSprite
+		sprite_index = jumpingSpriteA
 		addVector(90,22)
 		grounded = 0;
 	}

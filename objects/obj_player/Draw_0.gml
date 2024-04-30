@@ -4,6 +4,7 @@
 if grounded
 {
 	s = global.game_manager.player_facing(playerNum)
+	handObj.s = s;
 }
 
 gpu_set_fog(true, c_black, 0, 1000)

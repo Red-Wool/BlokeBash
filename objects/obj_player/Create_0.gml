@@ -109,7 +109,7 @@ function touchWall(wall)
 		
 			xOri *= -wallBounceDecay
 			
-			show_debug_message(xOri)
+			show_debug_message(string(xOri) + "UR")
 			
 			direction = point_direction(0,0,xOri, yOri)
 			speed = sqrt(sqr(yOri) + sqr(xOri))
@@ -137,7 +137,7 @@ function touchWall(wall)
 		
 			yOri = max(0, yOri)
 			
-			show_debug_message(yOri)
+			show_debug_message(string(yOri) + "YHa")
 			
 			direction = point_direction(0,0,xOri, yOri)
 			speed = sqrt(sqr(yOri) + sqr(xOri))
@@ -213,11 +213,16 @@ hitStun = 0;
 idleSprite = spr_JoshJacketIdle;
 walkSprite = spr_JoshJacketWalk;
 backWalkSprite = spr_JoshJacketBackWalk;
-landingSprite = tempLanding
-jumpingSprite = tempJump
+landingSpriteA = spr_JoshJacketLandingA;
+landingSpriteB = spr_JoshJacketLandingB;
+jumpingSpriteA = spr_JoshJacketLeapA
+jumpingSpriteB = spr_JoshJacketLeapB
 hitSprite = 0;
 deathSprite = 0;
-airSprite = tempAir;
+airSprite = spr_JoshAir;
 //Small variables do not touch
 s = 1
+
+//movement burst
+bursting = 0;
 

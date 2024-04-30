@@ -1,4 +1,5 @@
 playerOwner = pointer_null
+playerNum = 0;
 
 shoulderX = 0;
 shoulderY = 0;
@@ -16,9 +17,9 @@ prevX = 0;
 
 reach = 180;
 
+
 fistPower = 0
-currentFistSpeed = 0
-fistSpeed = 12.5
+fistSpeed = 20
 hitFistSpeed = 25
 superFistSpeed = 100
 
@@ -30,7 +31,7 @@ heavyPunchVelocityGroundScale = .12
 
 function isHitting()
 {
-	return hit > currentCooldown
+	return hit > cooldownFrames
 }
 
 function moveTowards(start,target,pace)
@@ -44,13 +45,12 @@ function moveTowards(start,target,pace)
 
 cursorlock = 0;
 
+s = 1
+
 p = 0;
 hit = 0;
-attackBasicFrames = 9;
-cooldownBasicFrames = 7;
-
-attackSuperFrames = 30;
-cooldownSuperFrames = 20;
+attackFrames = 30;
+cooldownFrames = 20;
 
 currentAttack = 0
 currentCooldown = 0

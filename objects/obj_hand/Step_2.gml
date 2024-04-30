@@ -1,9 +1,12 @@
 
-if gamepad_is_connected(0)
+if gamepad_is_connected(playerNum)
 {
 	//Get Left Stick Input
-	var haxis = gamepad_axis_value(0, gp_axisrh);
-	var vaxis = gamepad_axis_value(0, gp_axisrv);
+	var haxis = gamepad_axis_value(playerNum, gp_axisrh);
+	var vaxis = gamepad_axis_value(playerNum, gp_axisrv);
+	
+	if(abs(haxis) < .05)
+		haxis = 0.075 * s
 	
 	targetX = haxis * reach
 	targetY =  vaxis * reach
@@ -69,17 +72,19 @@ else
 	}
 	else
 	{
-		theta = 90;
+		theta = 0;
 	}
 
-	UpperArmObj.image_angle = UpperArmObj.direction - (theta);
+	UpperArmObj.image_angle = UpperArmObj.direction - s*(theta);
 	LowerArmObj.x = shoulderX + lengthdir_x(UpperArmLength,UpperArmObj.image_angle)
 	LowerArmObj.y = shoulderY + lengthdir_y(UpperArmLength,UpperArmObj.image_angle)
 	LowerArmObj.image_angle = point_direction(LowerArmObj.x,LowerArmObj.y,x,y)
 	
 	image_angle = 	LowerArmObj.image_angle
 	
-
+	image_yscale = s;
+	LowerArmObj.image_yscale = s;
+	UpperArmObj.image_yscale = s;
 
 
 
