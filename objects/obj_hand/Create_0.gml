@@ -46,8 +46,8 @@ cursorlock = 0;
 
 p = 0;
 hit = 0;
-attackBasicFrames = 6;
-cooldownBasicFrames = 10;
+attackBasicFrames = 9;
+cooldownBasicFrames = 7;
 
 attackSuperFrames = 30;
 cooldownSuperFrames = 20;
