@@ -5,7 +5,7 @@ if(sprite_index == jumpingSpriteA)
 if(sprite_index == landingSpriteB)
 	sprite_index = idleSprite
 if(sprite_index == landingSpriteA)
-	sprite_index = landingSpriteB
+	sprite_index = idleSprite
 
 
 

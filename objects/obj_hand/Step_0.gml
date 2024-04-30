@@ -1,14 +1,13 @@
-if(keyboard_check_pressed(ord("J")) || mouse_check_button_pressed(mb_left))
+var mag = point_distance(currentX, currentY, targetX, targetY)
+
+if ((s*prevX < s*currentX) && s*currentX > .3) || ((s*prevX > s*currentX) && s*currentX < -.3)
 {
-	//&& prevX < currentX
-	if(!hit)
+	if(!hit && mag > 10)
 	{
-		p = 1;
-		hit = attackFrames + cooldownFrames;
+	//&& prevX < currentX
+	hit = 1;
 		
 		
-		
-		var mag = point_distance(currentX, currentY, targetX, targetY)
 		if mag > 1
 		{
 			if !playerOwner.grounded
@@ -24,6 +23,11 @@ if(keyboard_check_pressed(ord("J")) || mouse_check_button_pressed(mb_left))
 		audio_play_sound(HitWhiff, 10, 0, 1, 0, .9 + mag * .004)
 	}
 }
+else
+{
+	hit = 0;	
+}
+
 
 if(keyboard_check_pressed(ord("K")) || mouse_check_button_pressed(mb_right))
 {
@@ -54,13 +58,6 @@ if(keyboard_check_pressed(ord("K")) || mouse_check_button_pressed(mb_right))
 
 if(hit)
 {
-	hit -= 1;
-	
-	if(hit <= cooldownFrames)
-	{
-	}
-	else
-	{
 		o = instance_place(x,y,obj_dummy)
 		if(instance_exists(o) && p)
 		{
@@ -68,9 +65,6 @@ if(hit)
 			o.addVector(image_angle+90,10)
 			p = 0;
 		}
-		
-		
-	}
 	
 }
 

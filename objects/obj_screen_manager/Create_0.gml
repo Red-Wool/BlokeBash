@@ -16,7 +16,7 @@ window_xy_ratio = display_get_height()/display_get_width()
 window_size_x = display_get_width() * window_size_x_percent
 window_size_y = window_size_x * window_xy_ratio
 
-window_scale = 3
+window_scale = 4
 
 camera_set_view_size(view_camera[0], window_size_x * window_scale, window_size_y * window_scale)
 //show_debug_message(window_size_x)

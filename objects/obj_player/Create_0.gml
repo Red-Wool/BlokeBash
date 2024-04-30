@@ -223,3 +223,6 @@ airSprite = spr_JoshAir;
 //Small variables do not touch
 s = 1
 
+//movement burst
+bursting = 0;
+

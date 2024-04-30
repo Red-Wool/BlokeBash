@@ -1,4 +1,5 @@
 playerOwner = pointer_null
+playerNum = 0;
 
 shoulderX = 0;
 shoulderY = 0;
@@ -18,7 +19,7 @@ reach = 180;
 
 
 fistPower = 0
-fistSpeed = 12.5
+fistSpeed = 20
 hitFistSpeed = 25
 superFistSpeed = 100
 
