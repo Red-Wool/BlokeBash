@@ -17,6 +17,7 @@ prevX = 0;
 
 reach = 180;
 
+currentFistSpeed = 25
 
 fistPower = 0
 fistSpeed = 20

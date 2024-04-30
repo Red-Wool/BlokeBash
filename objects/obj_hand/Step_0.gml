@@ -5,8 +5,8 @@ if ((s*prevX < s*currentX) && s*currentX > .3) || ((s*prevX > s*currentX) && s*c
 	if(!hit && mag > 10)
 	{
 	//&& prevX < currentX
-	hit = 1;
-		
+		hit = 1;
+		currentFistSpeed = hitFistSpeed
 		
 		if mag > 1
 		{
@@ -37,7 +37,7 @@ if(keyboard_check_pressed(ord("K")) || mouse_check_button_pressed(mb_right))
 		p = 1;
 		hit = attackFrames + cooldownFrames;
 		
-		
+		currentFistSpeed = superFistSpeed
 		
 		var mag = point_distance(currentX, currentY, targetX, targetY)
 		if mag > 1
