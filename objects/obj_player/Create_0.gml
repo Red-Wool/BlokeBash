@@ -203,7 +203,7 @@ moveBurstGroundTime = 3
 moveBurstAirTime = 25
 
 handObj = instance_create_depth(x,y,-10,obj_hand)
-handObj.playerOwner = self
+handObj.playerOwner = id
 handObj.shoulderX = x
 handObj.shoulderY = y
 handObj.holdX = x
