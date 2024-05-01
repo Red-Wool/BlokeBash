@@ -4,9 +4,9 @@
 canHit = true
 
 minVelocityHurt = .001
-damageScale = 100000
+damageScale = 10000
 stunScale = 200
-velocityScale = 3000
+velocityScale = 2200
 
 function checkScreenCrash()
 {
@@ -19,7 +19,7 @@ function applyScreenCrash(player)
 	audio_stop_sound(ScreenCrash)
 	audio_play_sound(ScreenCrash, 0, 0, 1, 0)
 	
-	player.playerHurt(round(abs(global.screen_manager.screen_velocity_x)*damageScale+minVelocityHurt),
+	player.playerHurt((round(abs(global.screen_manager.screen_velocity_x)*damageScale)+minVelocityHurt),
 	10 + round(abs(global.screen_manager.screen_velocity_x)*stunScale))
 			
 	var xForce = -side_x * round(abs(global.screen_manager.screen_velocity_x) * velocityScale)

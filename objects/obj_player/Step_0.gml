@@ -97,6 +97,10 @@ hitStun--
 
 if(!grounded)
 {
+	if(sprite_index == idleSprite)
+	{
+		sprite_index = airSprite
+	}
 	if(place_meeting(x,y,obj_floor) && sprite_index != jumpingSpriteA)
 	{
 		sprite_index = landingSpriteA;

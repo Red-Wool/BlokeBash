@@ -45,12 +45,13 @@ if  instance_place(x, y, obj_hand) //Hitting Arm
 	
 	
 	var arm = instance_place(x, y, obj_hand)
-	if canHit and arm.hit
+	if canHit and (arm.hit or arm.heavyHit)
 	{
 		audio_play_sound(HitDoor, 10, 0, 1, 0, random_range(.9,1.1) + side_y*.1)
 		
 		canHit = false
 		arm.hit = 0;
+		arm.heavyHit = 0;
 		arm.dipper = 0;
 		alarm[0] = 2
 		
