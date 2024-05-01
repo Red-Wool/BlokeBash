@@ -23,7 +23,7 @@ else
 	
 shader_set_uniform_f(detectRange, .005 + super * .005)
 shader_set_uniform_f(shaderTime, shaderTimer)
-shader_set_uniform_f(swish, swishX * max(swishTimer/5,0) * .3, swishY * max(swishTimer/5,0) * .3)
+shader_set_uniform_f(swish, swishX * max(swishTimer/10,0) * .3, swishY * max(swishTimer/10,0) * .3)
 shader_set_uniform_f(aura, super)
 
 draw_sprite_ext(sprite_index, image_index,x,y,s,1,image_angle,hitStun > 0 ? c_red : c_white, 1)

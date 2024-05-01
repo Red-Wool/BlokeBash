@@ -5,8 +5,6 @@ var s = hit ? 1.5: 1
 
 shader_set(OutlineShader)
 
-show_debug_message(string(playerOwner) + " aaa")
-
 if playerOwner.playerNum == 0
 	shader_set_uniform_f(colorShade, 1, 0, 0, 1)
 else
