@@ -26,8 +26,8 @@ reach = 180;
 currentFistSpeed = 25
 
 fistPower = 0
-fistSpeed = 20
-hitFistSpeed = 25
+fistSpeed = 15
+hitFistSpeed = 17
 superFistSpeed = 100
 
 punchVelocityAirScale = .04
@@ -67,3 +67,5 @@ LowerArmLength = 100;
 shoulderHandDistance = 0;
 UpperArmObj = instance_create_depth(x,y,-10,obj_upperArm)
 LowerArmObj = instance_create_depth(x,y,-10,obj_lowerArm)
+
+dipper = 1;

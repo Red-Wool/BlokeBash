@@ -4,9 +4,10 @@ shaderTimer += hit ? 3 : 1
 
 if ((s*prevX < s*currentX) && s*currentX > .3) || ((s*prevX > s*currentX) && s*currentX < -.3)
 {
-	if(!hit && mag > 10)
+	if(!hit && mag > 10 && dipper)
 	{
 	//&& prevX < currentX
+		sprite_index = spr_guac
 		hit = 1;
 		currentFistSpeed = hitFistSpeed
 		
@@ -25,9 +26,10 @@ if ((s*prevX < s*currentX) && s*currentX > .3) || ((s*prevX > s*currentX) && s*c
 		audio_play_sound(HitWhiff, 10, 0, .8, 0, .7 + mag * .004)
 	}
 }
-else
-{
-	hit = 0;	
+else if(point_distance(shoulderX,shoulderY,x,y) < 50)
+{	
+	dipper = 1;
+	sprite_index = spr_JoshHand
 }
 
 
@@ -60,12 +62,15 @@ if(keyboard_check_pressed(ord("K")) || mouse_check_button_pressed(mb_right))
 
 if(hit)
 {
-		o = instance_place(x,y,obj_dummy)
-		if(instance_exists(o) && p)
+		o = instance_place(x,y,obj_player)
+		
+		if(instance_exists(o) && o != playerOwner)
 		{
 			global.camera_fx.hit_stop(8, 1)
-			o.addVector(image_angle+90,10)
-			p = 0;
+			o.addVector(0,10)
+			hit = 0;
+			o.playerHurt(3,30)
+			dipper = 0;
 		}
 	
 }
