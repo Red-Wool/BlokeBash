@@ -1,11 +1,11 @@
 var mag = point_distance(currentX, currentY, targetX, targetY)
 
-if ((s*prevX < s*currentX) && s*currentX > .3) || ((s*prevX > s*currentX) && s*currentX < -.3)
+if ((s*prevX < s*currentX) && point_distance(shoulderX,shoulderY,x,y) > 75) || ((s*prevX > s*currentX) && point_distance(shoulderX,shoulderY,x,y) > 75)
 {
 	if(!hit && mag > 10 && dipper)
 	{
 	//&& prevX < currentX
-		sprite_index = spr_guac
+		sprite_index = spr_JoshFireHand
 		hit = 1;
 		currentFistSpeed = hitFistSpeed
 		
@@ -24,8 +24,9 @@ if ((s*prevX < s*currentX) && s*currentX > .3) || ((s*prevX > s*currentX) && s*c
 		audio_play_sound(HitWhiff, 10, 0, .8, 0, .7 + mag * .004)
 	}
 }
-else if(point_distance(shoulderX,shoulderY,x,y) < 50)
+else if(point_distance(shoulderX,shoulderY,x,y) <= 75)
 {	
+	hit = 0;
 	dipper = 1;
 	sprite_index = spr_JoshHand
 }
