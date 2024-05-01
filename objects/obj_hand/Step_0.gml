@@ -111,7 +111,7 @@ if(point_distance(shoulderX,shoulderY,x,y) <= 75)
 if(hit || heavyHit)
 {
 		o = instance_place(x,y,obj_player)
-		
+		h = instance_place(x,y,obj_hand)
 		if(instance_exists(o) && o != playerOwner)
 		{
 			if(hit)
@@ -133,6 +133,24 @@ if(hit || heavyHit)
 			dipper = 0;
 			active = 0;
 		}
+		else if(instance_exists(h) && h != id)
+		{
+			cooldown = 20;
+			dipper = 0;
+			active = 0;
+			hit = 0;
+			heavyHit = 0;
+			h.cooldown = 18;
+			h.dipper = 0;
+			h.active = 0;
+			h.hit = 0;
+			h.heavyHit = 0;
+			playerOwner.addVector(90 + (s*30),50)
+			playerOwner.grounded = 0;
+			h.playerOwner.addVector(90 - (s*30),50)
+			h.playerOwner.grounded = 0;
+		}
+		
 	
 }
 
