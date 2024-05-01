@@ -1,7 +1,12 @@
 var mag = point_distance(currentX, currentY, targetX, targetY)
 
+
 if ((s*prevX < s*currentX) && point_distance(shoulderX,shoulderY,x,y) > 75) || ((s*prevX > s*currentX) && point_distance(shoulderX,shoulderY,x,y) > 75)
+
+
+
 {
+shaderTimer += hit ? 3 : 1
 	if(!hit && mag > 10 && dipper)
 	{
 	//&& prevX < currentX

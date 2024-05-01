@@ -3,6 +3,7 @@ global.game_manager = self
 player_one = instance_create_depth(12000,11000,0,obj_player)
 player_one.playerNum = 0;
 player_one.handObj.playerNum = 0;
+
 player_two = instance_create_depth(13000,11000,0,obj_player)
 player_two.playerNum = 1;
 player_two.handObj.playerNum = 1;

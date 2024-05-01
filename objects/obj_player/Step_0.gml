@@ -1,3 +1,6 @@
+shaderTimer++
+swishTimer--
+
 if gamepad_is_connected(playerNum)
 {
 	//Get Left Stick Input
@@ -42,9 +45,13 @@ if  bursting and moveBursts >= 1
 	
 	moveBurstTimer = grounded ? moveBurstGroundTime : moveBurstAirTime
 	
+	swishTimer = 10
+	
 	if grounded
 	{
 		addVector(haxis >= 0 ? 0 : 180, moveBurstGroundForce)
+		swishX = haxis >= 0 ? 1 : -1
+		swishY = 0
 		audio_play_sound(GroundBurst, 0, 0, .6)
 	}
 	else
@@ -60,6 +67,8 @@ if  bursting and moveBursts >= 1
 			speed = sqrt(sqr(yOri) + sqr(xOri))
 		}
 		
+		swishX = haxis
+		swishY = -vaxis
 		
 		addVector(point_direction(0,0,haxis,-vaxis), moveBurstAirForce)
 		audio_play_sound(AirBurst, 0, 0, .6)
