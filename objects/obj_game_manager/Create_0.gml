@@ -1,12 +1,12 @@
 global.game_manager = self
 
-player_one = instance_create_depth(6500,5300,0,obj_player)
+player_one = instance_create_depth(12000,11000,0,obj_player)
 player_one.playerNum = 0;
 player_one.handObj.playerNum = 0;
-player_two = instance_create_depth(7000,5300,0,obj_player)
+player_two = instance_create_depth(13000,11000,0,obj_player)
 player_two.playerNum = 1;
 player_two.handObj.playerNum = 1;
-//audio_play_sound(JazzyNYC, 10, 1)
+audio_play_sound(JazzyNYC, 10, 1)
 
 winner = 0
 
@@ -25,6 +25,8 @@ function player_facing(player_num)
 
 function end_game(_death)
 {
+	audio_stop_sound(JazzyNYC)
+	
 	show_debug_message(string(_death) + "winnnnner!")
 	winner = 0 == _death ? player_two : player_one
 	is_playing = false

@@ -20,7 +20,7 @@ if ((s*prevX < s*currentX) && s*currentX > .3) || ((s*prevX > s*currentX) && s*c
 			}
 		}
 		
-		audio_play_sound(HitWhiff, 10, 0, 1, 0, .9 + mag * .004)
+		audio_play_sound(HitWhiff, 10, 0, .8, 0, .7 + mag * .004)
 	}
 }
 else
@@ -52,7 +52,7 @@ if(keyboard_check_pressed(ord("K")) || mouse_check_button_pressed(mb_right))
 			}
 		}
 		
-		audio_play_sound(HeavyPunch, 10, 0, 1, 0, 1 + mag * .001)
+		audio_play_sound(HeavyPunch, 10, 0, .5, 0, 1 + mag * .001)
 	}
 }
 

@@ -71,7 +71,10 @@ function stopYVelocity()
 	
 	xOri = speed*cos(degtorad(direction));
 	
+	
+	audio_play_sound(LandSFX, 0, 0, .3, 0, random_range(.9,1.1))
 	show_debug_message(string(xOri) + " Land")
+	
 	speed = abs(xOri)
 	if(xOri >= 0)
 		direction = 0;
@@ -220,6 +223,9 @@ jumpingSpriteB = spr_JoshJacketLeapB
 hitSprite = 0;
 deathSprite = 0;
 airSprite = spr_JoshAir;
+
+walkSound = -1
+
 //Small variables do not touch
 s = 1
 

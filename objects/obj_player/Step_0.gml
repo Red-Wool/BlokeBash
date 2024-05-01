@@ -24,6 +24,16 @@ else
 		bursting = 1;
 }
 
+if grounded and haxis != 0 and walkSound == -1
+{
+	walkSound = audio_play_sound(ConcreteFootsteps, 0, 1, .3)
+}
+else if (!grounded or haxis == 0) and walkSound != -1
+{
+	audio_stop_sound(walkSound)	
+	walkSound = -1
+}
+
 moveBurstTimer--
 //MoveBursts
 if  bursting and moveBursts >= 1
@@ -33,7 +43,10 @@ if  bursting and moveBursts >= 1
 	moveBurstTimer = grounded ? moveBurstGroundTime : moveBurstAirTime
 	
 	if grounded
+	{
 		addVector(haxis >= 0 ? 0 : 180, moveBurstGroundForce)
+		audio_play_sound(GroundBurst, 0, 0, .6)
+	}
 	else
 	{
 		
@@ -49,6 +62,7 @@ if  bursting and moveBursts >= 1
 		
 		
 		addVector(point_direction(0,0,haxis,-vaxis), moveBurstAirForce)
+		audio_play_sound(AirBurst, 0, 0, .6)
 		
 	}
 }
@@ -161,6 +175,8 @@ if (grounded)
 
 	if(vaxis > .5)
 	{
+		audio_play_sound(JumpSFX, 0, 0, .7, 0, random_range(1,1.2))
+		
 		sprite_index = jumpingSpriteA
 		addVector(90,22)
 		grounded = 0;

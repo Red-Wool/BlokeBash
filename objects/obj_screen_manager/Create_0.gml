@@ -1,7 +1,7 @@
 global.screen_manager = self
 
-center_x = 5000
-center_y = 5000
+center_x = 10000
+center_y = 10000
 
 screen_x = .5
 screen_y = .5
@@ -16,7 +16,7 @@ window_xy_ratio = display_get_height()/display_get_width()
 window_size_x = display_get_width() * window_size_x_percent
 window_size_y = window_size_x * window_xy_ratio
 
-window_scale = 4
+window_scale = 4.
 
 camera_set_view_size(view_camera[0], window_size_x * window_scale, window_size_y * window_scale)
 //show_debug_message(window_size_x)
@@ -50,12 +50,12 @@ function hit_wall(_force_x, _force_y)
 
 function set_wall_position_x(_mult)
 {
-	return center_x + (screen_pos_x + window_get_width()*.5 * _mult) * window_scale
+	return x + (window_get_width()*.5 * _mult) * window_scale
 }
 
 function set_wall_position_y(_mult)
 {
-	return center_y + (screen_pos_y + window_get_height()*.5 * _mult) * window_scale
+	return y + (window_get_height()*.5 * _mult) * window_scale
 }
 
 window_set_caption("Bloke Bash")

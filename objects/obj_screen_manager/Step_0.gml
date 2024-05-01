@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-screen_x = screen_x + screen_velocity_x
+screen_x += screen_velocity_x
 if screen_x > 1 or screen_x < 0
 {
 	screen_velocity_x *= -velocity_display_edge_decay
