@@ -20,7 +20,7 @@ draw_text_transformed(display_get_gui_width()*.7, 100, "Player 2 Here",3,3,0)
 
 draw_healthbar(display_get_gui_width()*.55, display_get_gui_height()*.01, 
 display_get_gui_width()*.99, display_get_gui_width()*.05, 
-temp_player_two_hp, c_black, c_red, c_green, 1, true, false)
+(player_two.hp/player_two.maxHP)*100, c_black, c_red, c_green, 1, true, false)
 
 if !is_playing
 {

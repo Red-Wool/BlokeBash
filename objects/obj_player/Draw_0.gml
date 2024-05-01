@@ -7,11 +7,28 @@ if grounded
 	handObj.s = s;
 }
 
+
+
 gpu_set_fog(true, c_black, 0, 1000)
 draw_sprite_ext(sprite_index, image_index,x,y + sprite_height*.2,s,.8,image_angle,c_black, .6)
 gpu_set_fog(false, c_black, 0, 1000)
 image_xscale = s
+
+shader_set(OutlineShader)
+
+if playerNum == 0
+	shader_set_uniform_f(colorShade, 1, 0, 0, 1)
+else
+	shader_set_uniform_f(colorShade, 1, 0, 1, 1)
+	
+shader_set_uniform_f(detectRange, .005 + super * .005)
+shader_set_uniform_f(shaderTime, shaderTimer)
+shader_set_uniform_f(swish, swishX * max(swishTimer/5,0) * .3, swishY * max(swishTimer/5,0) * .3)
+shader_set_uniform_f(aura, super)
+
 draw_sprite_ext(sprite_index, image_index,x,y,s,1,image_angle,hitStun > 0 ? c_red : c_white, 1)
+
+shader_reset()
 
 
 

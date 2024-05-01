@@ -1,6 +1,12 @@
 playerOwner = pointer_null
 playerNum = 0;
 
+colorShade = shader_get_uniform(OutlineShader, "outlineColor")
+detectRange = shader_get_uniform(OutlineShader, "detectRange")
+shaderTime = shader_get_uniform(OutlineShader, "time")
+aura = shader_get_uniform(OutlineShader, "aura")
+shaderTimer = 0
+
 shoulderX = 0;
 shoulderY = 0;
 

@@ -1,5 +1,7 @@
 var mag = point_distance(currentX, currentY, targetX, targetY)
 
+shaderTimer += hit ? 3 : 1
+
 if ((s*prevX < s*currentX) && s*currentX > .3) || ((s*prevX > s*currentX) && s*currentX < -.3)
 {
 	if(!hit && mag > 10)

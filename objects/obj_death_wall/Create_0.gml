@@ -16,6 +16,9 @@ function checkScreenCrash()
 
 function applyScreenCrash(player)
 {
+	audio_stop_sound(ScreenCrash)
+	audio_play_sound(ScreenCrash, 0, 0, 1, 0)
+	
 	player.playerHurt(round(abs(global.screen_manager.screen_velocity_x)*damageScale+minVelocityHurt),
 	10 + round(abs(global.screen_manager.screen_velocity_x)*stunScale))
 			

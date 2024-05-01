@@ -6,6 +6,18 @@ gamepad_set_axis_deadzone(0, .1)
 show_debug_message(global.player_one_character)
 sprite_index = global.player_one_character == 1 ? spr_dummy : spr_body
 
+
+colorShade = shader_get_uniform(OutlineShader, "outlineColor")
+swish = shader_get_uniform(OutlineShader, "swish")
+swishTimer = 0
+swishX = 0;
+swishY = 0;
+detectRange = shader_get_uniform(OutlineShader, "detectRange")
+shaderTime = shader_get_uniform(OutlineShader, "time")
+aura = shader_get_uniform(OutlineShader, "aura")
+shaderTimer = 0
+
+
 //hand = instance_create_depth(x,y,-1,obj_test_arm)
 
 //add velocity vector to character
@@ -61,7 +73,7 @@ function stopYVelocity()
 	{
 		if(place_meeting(x,y,obj_floor))
 		{
-			y -= 1	
+			y -= 5
 		}
 		else
 		{
@@ -171,6 +183,7 @@ yNew = 0;
 
 playerNum = 0
 
+super = 0
 
 
 maxHP = 5000;
@@ -203,7 +216,7 @@ moveBurstGroundTime = 3
 moveBurstAirTime = 25
 
 handObj = instance_create_depth(x,y,-10,obj_hand)
-handObj.playerOwner = self
+handObj.playerOwner = id
 handObj.shoulderX = x
 handObj.shoulderY = y
 handObj.holdX = x
