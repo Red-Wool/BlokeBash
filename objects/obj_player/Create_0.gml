@@ -3,7 +3,6 @@
 
 gamepad_set_axis_deadzone(0, .1)
 
-show_debug_message(global.player_one_character)
 sprite_index = global.player_one_character == 1 ? spr_dummy : spr_body
 
 
@@ -85,7 +84,7 @@ function stopYVelocity()
 	
 	
 	audio_play_sound(LandSFX, 0, 0, .3, 0, random_range(.9,1.1))
-	show_debug_message(string(xOri) + " Land")
+	//show_debug_message(string(xOri) + " Land")
 	
 	speed = abs(xOri)
 	if(xOri >= 0)
@@ -97,6 +96,8 @@ function stopYVelocity()
 
 function touchWall(wall)
 {
+	
+	
 	if wall.checkScreenCrash()
 	{
 		global.camera_fx.screen_shake(10,15)
@@ -124,7 +125,7 @@ function touchWall(wall)
 		
 			xOri *= -wallBounceDecay
 			
-			show_debug_message(string(xOri) + "UR")
+			show_debug_message(string(xOri) + " UR")
 			
 			direction = point_direction(0,0,xOri, yOri)
 			speed = sqrt(sqr(yOri) + sqr(xOri))
@@ -158,6 +159,8 @@ function touchWall(wall)
 			speed = sqrt(sqr(yOri) + sqr(xOri))
 		}
 	}
+	
+	wall.applyScreenSmash(speed, direction)
 }
 
 function playerHurt(damage, stun)

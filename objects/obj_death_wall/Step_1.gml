@@ -42,8 +42,6 @@ if instance_place(x, y, obj_player) //Hitting Player
 if  instance_place(x, y, obj_hand) //Hitting Arm
 {
 	
-	
-	
 	var arm = instance_place(x, y, obj_hand)
 	if canHit and (arm.hit or arm.heavyHit)
 	{

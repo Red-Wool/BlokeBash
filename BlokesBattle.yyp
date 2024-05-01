@@ -86,6 +86,7 @@
     {"id":{"name":"obj_dummy","path":"objects/obj_dummy/obj_dummy.yy",},},
     {"id":{"name":"SelectMenu","path":"rooms/SelectMenu/SelectMenu.yy",},},
     {"id":{"name":"ScreenCrash","path":"sounds/ScreenCrash/ScreenCrash.yy",},},
+    {"id":{"name":"Romantic","path":"fonts/Romantic/Romantic.yy",},},
     {"id":{"name":"obj_floor","path":"objects/obj_floor/obj_floor.yy",},},
     {"id":{"name":"JoshAuraShader","path":"shaders/JoshAuraShader/JoshAuraShader.yy",},},
     {"id":{"name":"obj_upperArm","path":"objects/obj_upperArm/obj_upperArm.yy",},},
