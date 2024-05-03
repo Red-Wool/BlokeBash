@@ -5,8 +5,10 @@ gamepad_set_axis_deadzone(0, .1)
 
 sprite_index = global.player_one_character == 1 ? spr_dummy : spr_body
 
+aliveFlag = true
 
 colorShade = shader_get_uniform(OutlineShader, "outlineColor")
+secondShade = shader_get_uniform(OutlineShader, "secondaryColor")
 swish = shader_get_uniform(OutlineShader, "swish")
 swishTimer = 0
 swishX = 0;
@@ -16,10 +18,26 @@ shaderTime = shader_get_uniform(OutlineShader, "time")
 aura = shader_get_uniform(OutlineShader, "aura")
 shaderTimer = 0
 
+punchSFXList = [JoshPunch1, JoshPunch2, JoshPunch3]
+heavyPunchSFXList = [JoshHeavyPunch1, JoshHeavyPunch2]
+hurtSFXList = [JoshHurt1, JoshHurt2, JoshHurt3]
+sfxID = -1
+
+audio_play_sound(JoshingTime, 0, 0)
 
 //hand = instance_create_depth(x,y,-1,obj_test_arm)
 
 //add velocity vector to character
+function scaleHit(dir, length)
+{
+	xNew = length*cos(degtorad(dir));
+	yNew = -length*sin(degtorad(dir));
+	
+	yNew *= yComboDecay
+	
+	addVector(point_direction(0,0,xNew, yNew), length)	
+}
+
 function addVector(dir,length)
 {
 	
@@ -40,6 +58,8 @@ function addVector(dir,length)
 	 yOri = -speed*sin(degtorad(direction));
 	 xNew = length*cos(degtorad(dir));
 	 yNew = -length*sin(degtorad(dir));
+	 
+	 
 	 direction = point_direction(0,0,xOri+xNew, yOri+yNew) //radtodeg(arctan((yOri+yNew)/(xOri+xNew)))
 	  
 	  //show_debug_message(xOri, " ", xNew)
@@ -96,12 +116,13 @@ function stopYVelocity()
 
 function touchWall(wall)
 {
-	
+	var mult = 1
 	
 	if wall.checkScreenCrash()
 	{
 		global.camera_fx.screen_shake(10,15)
 		wall.applyScreenCrash(self)
+		mult = .1
 	}
 	else if wall.side_x != 0
 	{
@@ -160,13 +181,17 @@ function touchWall(wall)
 		}
 	}
 	
-	wall.applyScreenSmash(speed, direction)
+	wall.applyScreenSmash(speed * mult, direction)
 }
 
 function playerHurt(damage, stun)
 {
+	audio_stop_sound(sfxID)
+	sfxID = audio_play_sound(hurtSFXList[irandom_range(0, array_length(hurtSFXList)-1)], 0, 0)
+	yComboDecay = max(0, yComboDecay - .1)
+	
 	hp -= damage
-	if hp <= 0
+	if hp <= 0 and aliveFlag
 	{
 		death()	
 	}
@@ -176,7 +201,10 @@ function playerHurt(damage, stun)
 
 function death()
 {
+	aliveFlag = false
 	global.game_manager.end_game(playerNum)
+	audio_stop_sound(sfxID)
+	audio_play_sound(JoshDeath, 0, 0)
 }
 
 xOri = 0;
@@ -187,6 +215,8 @@ yNew = 0;
 playerNum = 0
 
 super = 0
+
+yComboDecay = 1
 
 
 maxHP = 5000;

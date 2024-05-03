@@ -28,7 +28,7 @@ screen_velocity_x = 0
 screen_velocity_y = 0
 
 velocity_decay = .97
-velocity_gravity = .001
+velocity_gravity = .0005
 velocity_display_edge_decay = .2
 
 function set_window_pos()

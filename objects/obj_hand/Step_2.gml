@@ -1,6 +1,7 @@
 
-if gamepad_is_connected(playerNum)
+if gamepad_is_connected(playerNum) && (!hitStun)
 {
+
 	//Get Left Stick Input
 	var haxis = gamepad_axis_value(playerNum, gp_axisrh);
 	var vaxis = gamepad_axis_value(playerNum, gp_axisrv);
@@ -11,7 +12,7 @@ if gamepad_is_connected(playerNum)
 	targetX = haxis * reach
 	targetY =  vaxis * reach
 }
-else
+else if(!(hitStun))
 {
 	if(cursorlock)
 	{

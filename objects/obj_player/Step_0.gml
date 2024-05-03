@@ -1,6 +1,11 @@
 shaderTimer++
 swishTimer--
 
+if(hitStun)
+	handObj.hitStun =1
+else
+	handObj.hitStun = 0;
+
 if gamepad_is_connected(playerNum)
 {
 	//Get Left Stick Input
@@ -149,6 +154,11 @@ else
 		{
 			break
 		}
+	}
+	
+	if hitStun <= 0
+	{
+		yComboDecay = 1	
 	}
 }
 

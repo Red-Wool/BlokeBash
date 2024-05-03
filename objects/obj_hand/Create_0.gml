@@ -1,7 +1,16 @@
 playerOwner = pointer_null
 playerNum = 0;
 
+hitSFX = -1
+
 colorShade = shader_get_uniform(OutlineShader, "outlineColor")
+secondShade = shader_get_uniform(OutlineShader, "secondaryColor")
+swish = shader_get_uniform(OutlineShader, "swish")
+swishTimer = 0
+swishX = 0;
+swishY = 0;
+auraPower = 0
+
 detectRange = shader_get_uniform(OutlineShader, "detectRange")
 shaderTime = shader_get_uniform(OutlineShader, "time")
 aura = shader_get_uniform(OutlineShader, "aura")
@@ -72,3 +81,4 @@ LowerArmObj = instance_create_depth(x,y,-10,obj_lowerArm)
 dipper = 1;
 active = 0;
 cooldown = 0;
+hitStun = 0;
