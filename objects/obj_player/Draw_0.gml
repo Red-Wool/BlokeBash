@@ -7,7 +7,11 @@ if grounded
 	handObj.s = s;
 }
 
+if(hitStun && sprite_index != hitSprite && sprite_index != deathSprite)
+	sprite_index = hitSprite
 
+if(d)
+	sprite_index = deathSprite
 
 gpu_set_fog(true, c_black, 0, 1000)
 draw_sprite_ext(sprite_index, image_index,x,y + sprite_height*.2,s,.8,image_angle,c_black, .6)

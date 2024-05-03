@@ -146,6 +146,8 @@ if(point_distance(shoulderX,shoulderY,x,y) <= 75)
 if(hit || heavyHit)
 {
 		o = instance_place(x,y,obj_player)
+		if((!instance_exists(o) || o == playerOwner))
+			o = instance_place(x,y,obj_playerKimari)
 		h = instance_place(x,y,obj_hand)
 		if(instance_exists(o) && o != playerOwner)
 		{

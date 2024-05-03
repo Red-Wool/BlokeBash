@@ -1,10 +1,14 @@
 global.game_manager = self
-
-player_one = instance_create_depth(12000,11000,0,obj_player)
+o = obj_player;
+if(global.player_one_character == 1)
+	o = obj_playerKimari
+player_one = instance_create_depth(12000,11000,0,o)
 player_one.playerNum = 0;
 player_one.handObj.playerNum = 0;
-
-player_two = instance_create_depth(13000,11000,0,obj_player)
+o = obj_player;
+if(global.player_two_character == 1)
+	o = obj_playerKimari
+player_two = instance_create_depth(13000,11000,0,o)
 player_two.playerNum = 1;
 player_two.handObj.playerNum = 1;
 audio_play_sound(JazzyNYC, 10, 1)

@@ -76,7 +76,9 @@ UpperArmLength = 150;
 LowerArmLength = 150;
 shoulderHandDistance = 0;
 UpperArmObj = instance_create_depth(x,y,-10,obj_upperArm)
+UpperArmObj.hand = id;
 LowerArmObj = instance_create_depth(x,y,-10,obj_lowerArm)
+LowerArmObj.hand = id;
 
 dipper = 1;
 active = 0;

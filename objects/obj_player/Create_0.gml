@@ -198,12 +198,14 @@ function playerHurt(damage, stun)
 	
 	hitStun = stun
 }
-
+d = 0;
 function death()
 {
+	d = 1;
 	aliveFlag = false
 	global.game_manager.end_game(playerNum)
 	audio_stop_sound(sfxID)
+	sprite_index = deathSprite;
 	audio_play_sound(JoshDeath, 0, 0)
 }
 
@@ -266,8 +268,8 @@ landingSpriteA = spr_JoshJacketLandingA;
 landingSpriteB = spr_JoshJacketLandingB;
 jumpingSpriteA = spr_JoshJacketLeapA
 jumpingSpriteB = spr_JoshJacketLeapB
-hitSprite = 0;
-deathSprite = 0;
+hitSprite = spr_joshHurt;
+deathSprite = spr_JoshDeath;
 airSprite = spr_JoshAir;
 
 walkSound = -1

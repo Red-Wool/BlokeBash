@@ -1,10 +1,17 @@
 shaderTimer++
 swishTimer--
 
-if(hitStun)
+if(hitStun || d)
 	handObj.hitStun =1
 else
+{
+	if(grounded)
+		sprite_index = idleSprite
+	else
+		sprite_index = airSprite
+	
 	handObj.hitStun = 0;
+}
 
 if gamepad_is_connected(playerNum)
 {

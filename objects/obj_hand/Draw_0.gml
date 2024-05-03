@@ -1,5 +1,11 @@
 /// @description Insert description here
 // You can write your code in this editordddddddd
+if(playerOwner.sprite_index == playerOwner.hitSprite)
+{ 
+	return;
+}
+
+
 
 var s = hit ? 1.5: 1
 
