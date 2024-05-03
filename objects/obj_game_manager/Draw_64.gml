@@ -10,7 +10,7 @@ draw_text_transformed(display_get_gui_width()*.5, 10, floor(game_time),3,3,0)
 
 draw_set_color(c_white)
 
-draw_text_transformed(display_get_gui_width()*.1, 100, "Player 1 Here",3,3,0)
+draw_text_transformed(display_get_gui_width()*.1, 100, global.player_one_character == 0 ? "Josh" : "Kimari",3,3,0)
 
 //show_debug_message(player_one.hp)
 
@@ -31,7 +31,7 @@ for (var i = 0; i < player_one.moveBurstMax; i++)
 
 
 
-draw_text_transformed(display_get_gui_width()*.7, 100, "Player 2 Here",3,3,0)
+draw_text_transformed(display_get_gui_width()*.7, 100, global.player_two_character == 0 ? "Josh" : "Kimari",3,3,0)
 
 draw_healthbar(display_get_gui_width()*.55, display_get_gui_height()*.01, 
 display_get_gui_width()*.99, display_get_gui_height()*.1, 
