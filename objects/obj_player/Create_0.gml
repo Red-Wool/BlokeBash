@@ -241,6 +241,7 @@ function stopGodWalker()
 d = 0;
 function death()
 {
+	instance_create_depth(x,y,-500,obj_explosion);
 	d = 1;
 	aliveFlag = false
 	global.game_manager.end_game(playerNum)
@@ -304,7 +305,7 @@ handObj.holdY = y
 
 hitStun = 0;
 
-
+m = 0;
 idleSprite = spr_JoshJacketIdle;
 walkSprite = spr_JoshJacketWalk;
 backWalkSprite = spr_JoshJacketBackWalk;

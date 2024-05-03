@@ -12,6 +12,18 @@ if(hitStun && sprite_index != hitSprite && sprite_index != deathSprite)
 
 if(d)
 	sprite_index = deathSprite
+	
+if(hasGodWalker)
+{
+	if(d)
+		sprite_index = deathSprite
+	else if(hitStun)
+		sprite_index = spr_unHit;
+	else if(m)
+		sprite_index = spr_unWalk;
+	else
+		sprite_index = spr_unJacket
+}
 
 gpu_set_fog(true, c_black, 0, 1000)
 draw_sprite_ext(sprite_index, image_index,x,y + sprite_height*.2,s,.8,image_angle,c_black, .6)

@@ -20,13 +20,13 @@
   ],
   "gridX": 0,
   "gridY": 0,
-  "height": 858,
+  "height": 790,
   "HTile": false,
   "layers": [
     {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"53094993-f054-47ad-8d1c-63967b6c292c","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
-  "origin": 0,
+  "origin": 9,
   "parent": {
     "name": "JoshIdle",
     "path": "folders/Sprites/JoshAnimations/JoshIdle.yy",
@@ -65,8 +65,8 @@
     ],
     "visibleRange": null,
     "volume": 1.0,
-    "xorigin": 0,
-    "yorigin": 0,
+    "xorigin": 210,
+    "yorigin": 250,
   },
   "swatchColours": null,
   "swfPrecision": 2.525,
@@ -76,5 +76,5 @@
   },
   "type": 0,
   "VTile": false,
-  "width": 529,
+  "width": 487,
 }
