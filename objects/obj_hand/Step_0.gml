@@ -64,7 +64,6 @@ shaderTimer += hit ? 3 : 1
 	if(!hit && mag > 3 && dipper)
 	{
 	//&& prevX < currentX
-		sprite_index = spr_JoshFireHand
 		hit = 1;
 		currentFistSpeed = hitFistSpeed
 		
@@ -139,7 +138,6 @@ if(point_distance(shoulderX,shoulderY,x,y) <= 75)
 	hit = 0;
 	heavyHit = 0;
 	dipper = 1;
-	sprite_index = spr_JoshHand
 }
 
 
