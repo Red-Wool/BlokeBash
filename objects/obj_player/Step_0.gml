@@ -52,7 +52,7 @@ else
 }
 
 if(abs(haxis) > .1)
-	m = 1;
+	m = 1
 else
 	m = 0;
 

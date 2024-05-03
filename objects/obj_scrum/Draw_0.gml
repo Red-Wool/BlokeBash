@@ -3,21 +3,13 @@
 
 shader_set(OutlineShader)
 
-if playerNum == 0
-{
-	shader_set_uniform_f(colorShade, 1, 0, 0, 1)
-	shader_set_uniform_f(secondShade, 1, .67, 0, 1)
-}
-else
-{
-	shader_set_uniform_f(colorShade, 1, 0, 1, 1)
-	shader_set_uniform_f(secondShade, .5, 0, 1, 1)
-}
+shader_set_uniform_f(colorShade, .5, 0, 1, 1)
+shader_set_uniform_f(secondShade, .2, 0, .8, 1)
 	
-shader_set_uniform_f(detectRange, .005 + super * .005)
+shader_set_uniform_f(detectRange, .1)
 shader_set_uniform_f(shaderTime, shaderTimer)
 shader_set_uniform_f(swish, swishX * max(swishTimer/10,0) * .3, swishY * max(swishTimer/10,0) * .3)
-shader_set_uniform_f(aura, super)
+shader_set_uniform_f(aura, 1)
 
 
 draw_self()
