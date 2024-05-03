@@ -44,4 +44,7 @@ if keyboard_check_pressed(vk_right)
 }
 
 if player_one_select and player_two_select and keyboard_check_pressed(vk_space)
+{
+	audio_stop_sound(SelectYourFighter)
 	room_goto(GameScene)
+}

@@ -91,7 +91,7 @@ shaderTimer += hit ? 3 : 1
 		else
 		{
 			audio_stop_sound(hitSFX)
-			hitSFX = audio_play_sound(playerOwner.heavyPunchSFXList[irandom_range(0, array_length(playerOwner.heavyPunchSFXList)-1)], 0, 0, .5)
+			hitSFX = audio_play_sound(playerOwner.heavyPunchSFXList[irandom_range(0, array_length(playerOwner.heavyPunchSFXList)-1)], 0, 0, 1)
 			audio_play_sound(HitWhiff, 10, 0, .8, 0, .8 + mag * .002)	
 		}
 		}
