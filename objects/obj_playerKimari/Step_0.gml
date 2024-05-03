@@ -1,6 +1,6 @@
 shaderTimer++
 swishTimer--
-moveBursts = min(moveBurstMax, moveBursts+1./game_get_speed(gamespeed_fps))
+moveBursts = min(moveBurstMax, moveBursts+moveBurstRegen/game_get_speed(gamespeed_fps))
 
 if(hitStun || d)
 	handObj.hitStun =1
@@ -38,6 +38,15 @@ else
 	var vaxis = (keyboard_check(ord("W")) ? 1 : 0) - (keyboard_check(ord("S")) ? 1 : 0)
 	if keyboard_check_pressed(vk_space)
 		bursting = 1;
+	if keyboard_check_pressed(vk_shift)
+		doSuper = true
+	else
+		doSuper = false
+}
+
+if super >= 1 and doSuper
+{
+		
 }
 
 if grounded and haxis != 0 and walkSound == -1

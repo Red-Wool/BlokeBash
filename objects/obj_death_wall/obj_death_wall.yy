@@ -13,8 +13,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "Fonts",
+    "path": "folders/Fonts.yy",
   },
   "parentObjectId": null,
   "persistent": false,

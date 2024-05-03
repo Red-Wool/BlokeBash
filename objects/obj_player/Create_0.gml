@@ -18,6 +18,8 @@ shaderTime = shader_get_uniform(OutlineShader, "time")
 aura = shader_get_uniform(OutlineShader, "aura")
 shaderTimer = 0
 
+
+sfxMult = .8
 punchSFXList = [JoshPunch1, JoshPunch2, JoshPunch3]
 heavyPunchSFXList = [JoshHeavyPunch1, JoshHeavyPunch2]
 hurtSFXList = [JoshHurt1, JoshHurt2, JoshHurt3]
@@ -190,7 +192,8 @@ function playerHurt(damage, stun)
 	sfxID = audio_play_sound(hurtSFXList[irandom_range(0, array_length(hurtSFXList)-1)], 0, 0)
 	yComboDecay = max(0, yComboDecay - .1)
 	
-	hp -= damage
+	if (!global.game_manager.can_leave)
+		hp -= damage
 	if hp <= 0 and aliveFlag
 	{
 		death()	
@@ -198,6 +201,43 @@ function playerHurt(damage, stun)
 	
 	hitStun = stun
 }
+
+function superAdd(s)
+{
+	if !hasGodWalker
+	{
+		if (super < .25 && super + s >= .25)
+			audio_play_sound(JoshCrawler, 0, 0, .5)
+		
+		if (super < .5 && super + s >= .5)
+			audio_play_sound(JoshJogger, 0, 0, .5)
+			
+		if (super < .75 && super + s >= .75)
+			audio_play_sound(JoshSprinter, 0, 0, .5)
+			
+		if (super < 1 && super + s >= 1)
+		{
+			global.camera_fx.hit_stop(5,10)
+			audio_play_sound(JoshWalker, 0, 0, .5)
+			global.game_manager.god_walker()
+			hasGodWalker = true
+		}
+	}
+	else
+	{
+		s *= .5	
+	}
+	
+	super = min(1, super + s)
+	
+}
+
+function stopGodWalker()
+{
+	hasGodWalker = false
+}
+
+
 d = 0;
 function death()
 {
@@ -235,6 +275,8 @@ groundDashFriction = .98;
 moveFriction = .95;
 airDecay = .99;
 
+hasGodWalker = false
+
 
 wallBounceDecay = .5;
 
@@ -244,7 +286,7 @@ endLag = 0;
 
 moveBursts = 50
 moveBurstMax = 4
-moveBurstRegen = .3
+moveBurstRegen = .6
 moveBurstGroundForce = 50
 moveBurstAirForce = 20
 

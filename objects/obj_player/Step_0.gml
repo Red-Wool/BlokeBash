@@ -1,6 +1,17 @@
-shaderTimer++
+shaderTimer += hasGodWalker ? 10 : 1
 swishTimer--
-moveBursts = min(moveBurstMax, moveBursts+1./game_get_speed(gamespeed_fps))
+moveBursts = min(moveBurstMax, moveBursts+(moveBurstRegen + (hasGodWalker ? 1 : 0))/game_get_speed(gamespeed_fps))
+
+super = max(0, super-.01/game_get_speed(gamespeed_fps))
+
+if hasGodWalker
+{
+	super = max(0, super-.1/game_get_speed(gamespeed_fps))
+	if super == 0
+	{
+		stopGodWalker()	
+	}
+}
 
 if(hitStun || d)
 	handObj.hitStun =1
@@ -195,7 +206,7 @@ if(sprite_index != jumpingSpriteA && sprite_index != landingSpriteA && sprite_in
   //show_debug_message(string(yOri) + " " + string(yNew))
   //show_debug_message(direction)
 
-x += haxis * moveSpeed
+x += haxis * (moveSpeed + (hasGodWalker ? 4: 0))
 
 
 

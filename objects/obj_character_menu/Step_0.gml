@@ -32,6 +32,8 @@ if keyboard_check_pressed(vk_right)
 		player_one_select_portrait.image_index = 1
 		global.player_one_character = 1
 		
+		audio_play_sound(KimariSelect, 0, 0, .5)
+		
 		player_one_select = true
 	}
 	else if !player_two_select
@@ -39,6 +41,9 @@ if keyboard_check_pressed(vk_right)
 		player_two_select_portrait.sprite_index = spr_temp_josh_portrait
 		player_two_select_portrait.image_index = 1
 		global.player_two_character = 1
+		
+		audio_play_sound(KimariSelect, 0, 0, .5)
+		
 		player_two_select = true
 	}
 }

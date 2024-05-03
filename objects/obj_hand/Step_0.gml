@@ -85,13 +85,13 @@ shaderTimer += hit ? 3 : 1
 		if (hhTrigger)
 		{
 			audio_stop_sound(hitSFX)
-						hitSFX = audio_play_sound(playerOwner.heavyPunchSFXList[irandom_range(0, array_length(playerOwner.heavyPunchSFXList)-1)], 0, 0, 1)
+						hitSFX = audio_play_sound(playerOwner.heavyPunchSFXList[irandom_range(0, array_length(playerOwner.heavyPunchSFXList)-1)], 0, 0, 1*playerOwner.sfxMult)
 			audio_play_sound(HeavyPunch, 10, 0, .8, 0, .7 + mag * .004)	
 		}
 		else
 		{
 			audio_stop_sound(hitSFX)
-			hitSFX = audio_play_sound(playerOwner.punchSFXList[irandom_range(0, array_length(playerOwner.punchSFXList)-1)], 0, 0, .3)
+			hitSFX = audio_play_sound(playerOwner.punchSFXList[irandom_range(0, array_length(playerOwner.punchSFXList)-1)], 0, 0, .4*playerOwner.sfxMult)
 
 			audio_play_sound(HitWhiff, 10, 0, .8, 0, .8 + mag * .002)	
 		}
@@ -156,20 +156,25 @@ if(hit || heavyHit)
 			{
 				
 				
-				playerOwner.super = min(1, playerOwner.super + .1)
+				
 				global.camera_fx.hit_stop(8, 1)
+				
 				o.scaleHit(90 + (-s*30),30)
 				hit = 0;
 				o.playerHurt(150,25)
+				playerOwner.superAdd(.1)
 				cooldown = 5;
 			}
 			else if(heavyHit)
 			{
+				
 				global.camera_fx.hit_stop(13, 2)
+				
 				o.addVector(90 + (-s*45),70)
 				heavyHit = 0;
 				o.scaleHit(400,25)
 				o.playerHurt(400,25)
+				playerOwner.superAdd(.15)
 				cooldown = 15;
 			}
 			dipper = 0;

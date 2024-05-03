@@ -11,7 +11,16 @@ if(global.player_two_character == 1)
 player_two = instance_create_depth(13000,11000,0,o)
 player_two.playerNum = 1;
 player_two.handObj.playerNum = 1;
-audio_play_sound(JazzyNYC, 10, 1)
+
+music = audio_play_sound(JazzyNYC, 10, 1)
+
+function god_walker()
+{
+	audio_sound_pitch(music, .5)	
+	audio_sound_gain(music, .3, 0)
+	audio_sound_gain(music, 1, 2000)
+	alarm[0] = 200
+}
 
 winner = 0
 

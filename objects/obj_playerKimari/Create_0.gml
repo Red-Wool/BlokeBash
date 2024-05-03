@@ -18,12 +18,15 @@ shaderTime = shader_get_uniform(OutlineShader, "time")
 aura = shader_get_uniform(OutlineShader, "aura")
 shaderTimer = 0
 
-punchSFXList = [JoshPunch1, JoshPunch2, JoshPunch3]
-heavyPunchSFXList = [JoshHeavyPunch1, JoshHeavyPunch2]
-hurtSFXList = [JoshHurt1, JoshHurt2, JoshHurt3]
+
+
+sfxMult = .6
+punchSFXList = [KimariPunch1, KimariPunch2, KimariPunch3]
+heavyPunchSFXList = [KimariHeavyPunch1, KimariHeavyPunch2]
+hurtSFXList = [KimariHurt1, KimariHurt1, KimariHurt2, KimariHurt2, KimariHurt3]
 sfxID = -1
 
-audio_play_sound(JoshingTime, 0, 0)
+audio_play_sound(KimariIntro, 0, 0, .5)
 
 //hand = instance_create_depth(x,y,-1,obj_test_arm)
 
@@ -184,13 +187,23 @@ function touchWall(wall)
 	wall.applyScreenSmash(speed * mult, direction)
 }
 
+function superAdd(s)
+{
+	if (super < 1 && super + s >= 1)
+		audio_play_sound(KimariScrum, 0, 0, .5)
+	
+	super = min(1, super + s)
+	
+}
+
 function playerHurt(damage, stun)
 {
 	audio_stop_sound(sfxID)
-	sfxID = audio_play_sound(hurtSFXList[irandom_range(0, array_length(hurtSFXList)-1)], 0, 0)
+	sfxID = audio_play_sound(hurtSFXList[irandom_range(0, array_length(hurtSFXList)-1)], 0, 0, .5)
 	yComboDecay = max(0, yComboDecay - .1)
 	
-	hp -= damage
+	if (!global.game_manager.can_leave)
+		hp -= damage
 	if hp <= 0 and aliveFlag
 	{
 		death()	
@@ -206,7 +219,7 @@ function death()
 	global.game_manager.end_game(playerNum)
 	audio_stop_sound(sfxID)
 	sprite_index = deathSprite;
-	audio_play_sound(JoshDeath, 0, 0)
+	audio_play_sound(KimariDeath, 0, 0)
 }
 
 xOri = 0;
@@ -216,7 +229,9 @@ yNew = 0;
 
 playerNum = 0
 
+doSuper = 0
 super = 0
+superCheckpoint = 1
 
 yComboDecay = 1
 
@@ -244,7 +259,7 @@ endLag = 0;
 
 moveBursts = 50
 moveBurstMax = 4
-moveBurstRegen = .3
+moveBurstRegen = 1.
 moveBurstGroundForce = 50
 moveBurstAirForce = 20
 

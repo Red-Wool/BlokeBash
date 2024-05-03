@@ -31,8 +31,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_JoshJacketIdle",
-    "path": "sprites/spr_JoshJacketIdle/spr_JoshJacketIdle.yy",
+    "name": "spr_KimariIdle",
+    "path": "sprites/spr_KimariIdle/spr_KimariIdle.yy",
   },
   "spriteMaskId": null,
   "visible": true,
