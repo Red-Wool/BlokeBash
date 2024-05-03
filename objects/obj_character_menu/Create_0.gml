@@ -2,6 +2,8 @@ global.character_menu = self
 global.player_one_character = 0
 global.player_two_character = 0
 
+game_set_speed(60, gamespeed_fps)
+audio_stop_sound(ConcreteFootsteps)
 audio_play_sound(SelectYourFighter, 0, 1)
 
 player_one_select = false
