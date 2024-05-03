@@ -130,7 +130,7 @@ function touchWall(wall)
 		{
 			if(place_meeting(x,y,obj_death_wall))
 			{
-				x -= sign(wall.side_x)
+				x -= sign(wall.side_x) * 3
 			}
 			else
 			{
@@ -243,6 +243,8 @@ hitStun = 0;
 endLag = 0;
 
 moveBursts = 50
+moveBurstMax = 4
+moveBurstRegen = .3
 moveBurstGroundForce = 50
 moveBurstAirForce = 20
 
