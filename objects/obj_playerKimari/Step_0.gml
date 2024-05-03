@@ -22,6 +22,10 @@ if gamepad_is_connected(playerNum)
 	
 	if gamepad_button_check_pressed(playerNum,gp_shoulderlb)
 		bursting = 1;
+	if gamepad_button_check_pressed(playerNum,gp_face1)
+		doSuper = true
+	else
+		doSuper = false
 	/*
 	//Get Right Stick Input
 	haxis = gamepad_axis_value(0, gp_axisrh);

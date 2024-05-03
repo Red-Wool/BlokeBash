@@ -50,7 +50,10 @@ else
 	if keyboard_check_pressed(vk_space)
 		bursting = 1;
 }
-
+if(abs(haxis) > .1)
+	m = 1
+else
+	m = 0;
 if grounded and haxis != 0 and walkSound == -1
 {
 	walkSound = audio_play_sound(ConcreteFootsteps, 0, 1, .3)

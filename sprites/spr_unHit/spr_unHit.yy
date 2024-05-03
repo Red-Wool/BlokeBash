@@ -11,7 +11,7 @@
   "collisionTolerance": 0,
   "DynamicTexturePage": false,
   "edgeFiltering": false,
-  "For3D": false,
+  "For3D": true,
   "frames": [
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"e4465903-7f21-406d-9964-f66675c25fc0",},
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"cae465c8-ed07-444c-a9d0-02420d98452c",},
@@ -26,7 +26,7 @@
     {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"53094993-f054-47ad-8d1c-63967b6c292c","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
-  "origin": 0,
+  "origin": 9,
   "parent": {
     "name": "JoshIdle",
     "path": "folders/Sprites/JoshAnimations/JoshIdle.yy",
@@ -65,8 +65,8 @@
     ],
     "visibleRange": null,
     "volume": 1.0,
-    "xorigin": 0,
-    "yorigin": 0,
+    "xorigin": 250,
+    "yorigin": 275,
   },
   "swatchColours": null,
   "swfPrecision": 2.525,

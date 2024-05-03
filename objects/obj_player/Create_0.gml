@@ -6,7 +6,7 @@ gamepad_set_axis_deadzone(0, .1)
 sprite_index = global.player_one_character == 1 ? spr_dummy : spr_body
 
 aliveFlag = true
-
+m = 0;
 colorShade = shader_get_uniform(OutlineShader, "outlineColor")
 secondShade = shader_get_uniform(OutlineShader, "secondaryColor")
 swish = shader_get_uniform(OutlineShader, "swish")
