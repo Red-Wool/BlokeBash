@@ -3,7 +3,7 @@
 
 shaderTimer += 3
 
-x += move * 30
+x += move * 60
 var player = (instance_place(x,y, [obj_player, obj_playerKimari]))
 if (player and player != owner and check)
 {
