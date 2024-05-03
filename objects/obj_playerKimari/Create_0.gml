@@ -253,11 +253,14 @@ moveBurstGroundTime = 3
 moveBurstAirTime = 25
 
 handObj = instance_create_depth(x,y,-10,obj_hand)
+handObj.sprite_index =KimariHand;
 handObj.playerOwner = id
 handObj.shoulderX = x
 handObj.shoulderY = y
 handObj.holdX = x
 handObj.holdY = y
+handObj.LowerArmObj.sprite_index = KimariFore;
+handObj.UpperArmObj.sprite_index = KimariUpper;
 
 
 hitStun = 0;
@@ -271,7 +274,7 @@ landingSpriteB = spr_JoshJacketLandingB;
 jumpingSpriteA = spr_KimariLeapA
 jumpingSpriteB = spr_KimariLeapB
 hitSprite = spr_KimariHurt;
-deathSprite = 0;
+deathSprite = spr_KimariDeath;
 airSprite = spr_KimariAir;
 
 walkSound = -1

@@ -31,8 +31,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_JoshFireHand",
-    "path": "sprites/spr_JoshFireHand/spr_JoshFireHand.yy",
+    "name": "spr_JoshHand",
+    "path": "sprites/spr_JoshHand/spr_JoshHand.yy",
   },
   "spriteMaskId": null,
   "visible": true,
