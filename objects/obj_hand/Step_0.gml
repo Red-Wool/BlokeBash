@@ -85,13 +85,14 @@ shaderTimer += hit ? 3 : 1
 		if (hhTrigger)
 		{
 			audio_stop_sound(hitSFX)
-			hitSFX = audio_play_sound(playerOwner.punchSFXList[irandom_range(0, array_length(playerOwner.punchSFXList)-1)], 0, 0, .3)
-			audio_play_sound(HitWhiff, 10, 0, .8, 0, .7 + mag * .004)	
+						hitSFX = audio_play_sound(playerOwner.heavyPunchSFXList[irandom_range(0, array_length(playerOwner.heavyPunchSFXList)-1)], 0, 0, 1)
+			audio_play_sound(HeavyPunch, 10, 0, .8, 0, .7 + mag * .004)	
 		}
 		else
 		{
 			audio_stop_sound(hitSFX)
-			hitSFX = audio_play_sound(playerOwner.heavyPunchSFXList[irandom_range(0, array_length(playerOwner.heavyPunchSFXList)-1)], 0, 0, 1)
+			hitSFX = audio_play_sound(playerOwner.punchSFXList[irandom_range(0, array_length(playerOwner.punchSFXList)-1)], 0, 0, .3)
+
 			audio_play_sound(HitWhiff, 10, 0, .8, 0, .8 + mag * .002)	
 		}
 		}

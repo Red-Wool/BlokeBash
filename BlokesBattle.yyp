@@ -42,6 +42,7 @@
   "resources": [
     {"id":{"name":"obj_game_manager","path":"objects/obj_game_manager/obj_game_manager.yy",},},
     {"id":{"name":"JoshTaunt","path":"sounds/JoshTaunt/JoshTaunt.yy",},},
+    {"id":{"name":"Scrum","path":"sprites/Scrum/Scrum.yy",},},
     {"id":{"name":"spr_arm1","path":"sprites/spr_arm1/spr_arm1.yy",},},
     {"id":{"name":"JoshCrawler","path":"sounds/JoshCrawler/JoshCrawler.yy",},},
     {"id":{"name":"obj_character_menu","path":"objects/obj_character_menu/obj_character_menu.yy",},},
@@ -74,6 +75,7 @@
     {"id":{"name":"obj_death_wall","path":"objects/obj_death_wall/obj_death_wall.yy",},},
     {"id":{"name":"spr_KimariIdle","path":"sprites/spr_KimariIdle/spr_KimariIdle.yy",},},
     {"id":{"name":"spr_KimariLeapA","path":"sprites/spr_KimariLeapA/spr_KimariLeapA.yy",},},
+    {"id":{"name":"obj_scrum","path":"objects/obj_scrum/obj_scrum.yy",},},
     {"id":{"name":"OutlineShader","path":"shaders/OutlineShader/OutlineShader.yy",},},
     {"id":{"name":"spr_KimariLanding","path":"sprites/spr_KimariLanding/spr_KimariLanding.yy",},},
     {"id":{"name":"Sprite7","path":"sprites/Sprite7/Sprite7.yy",},},

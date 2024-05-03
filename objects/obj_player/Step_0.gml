@@ -1,5 +1,6 @@
 shaderTimer++
 swishTimer--
+moveBursts = min(moveBurstMax, moveBursts+1./game_get_speed(gamespeed_fps))
 
 if(hitStun || d)
 	handObj.hitStun =1
