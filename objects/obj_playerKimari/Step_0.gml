@@ -54,6 +54,7 @@ if super >= 1 and doSuper
 	audio_play_sound(KimariSpreadsheetPurple, 0, 0, .5)
 	global.game_manager.god_walker()
 	alarm[0] = 100
+	super = 0
 }
 
 if grounded and haxis != 0 and walkSound == -1

@@ -1,12 +1,12 @@
 shaderTimer += hasGodWalker ? 10 : 1
 swishTimer--
-moveBursts = min(moveBurstMax, moveBursts+(moveBurstRegen + (hasGodWalker ? 1 : 0))/game_get_speed(gamespeed_fps))
+moveBursts = min(moveBurstMax, moveBursts+(moveBurstRegen + (hasGodWalker ? 1.5 : 0))/game_get_speed(gamespeed_fps))
 
 super = max(0, super-.01/game_get_speed(gamespeed_fps))
 
 if hasGodWalker
 {
-	super = max(0, super-.1/game_get_speed(gamespeed_fps))
+	super = max(0, super-.1/60.)
 	if super == 0
 	{
 		stopGodWalker()	
@@ -90,7 +90,8 @@ if  bursting and moveBursts >= 1
 		yOri = -speed*sin(degtorad(direction));
 		if abs(yOri) > 1
 		{
-			yOri *= .1
+			xOri *= hasGodWalker and sign(xOri != haxis) ? .1 : 1
+			yOri *= hasGodWalker ? .01 : .1
 			
 			direction = point_direction(0,0,xOri, yOri)
 			speed = sqrt(sqr(yOri) + sqr(xOri))
@@ -211,13 +212,13 @@ if(sprite_index != jumpingSpriteA && sprite_index != landingSpriteA && sprite_in
   //show_debug_message(string(yOri) + " " + string(yNew))
   //show_debug_message(direction)
 
-x += haxis * (moveSpeed + (hasGodWalker ? 4: 0))
+x += haxis * (moveSpeed + (hasGodWalker ? 2: 0))
 
 
 
 if (grounded)
 {
-	addVector(haxis > 0 ? 0 : 180, abs(haxis) * moveVelocity)
+	addVector(haxis > 0 ? 0 : 180, abs(haxis) * ((hasGodWalker ? 2.8 : 0) + moveVelocity))
 
 
 	if(vaxis > .5)

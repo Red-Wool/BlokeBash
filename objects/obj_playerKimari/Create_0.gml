@@ -91,6 +91,12 @@ function processPhysics()
 //set Y velocity to 0
 function stopYVelocity()
 {
+	yOri = -speed*sin(degtorad(direction));
+	if yOri	< 0 
+	{
+		return	
+	}
+	
 	for (var i = 0; i < 10; i++)
 	{
 		if(place_meeting(x,y,obj_floor))

@@ -204,6 +204,8 @@ function playerHurt(damage, stun)
 
 function superAdd(s)
 {
+	s *= 1.5;
+	
 	if !hasGodWalker
 	{
 		if (super < .25 && super + s >= .25)
@@ -225,7 +227,7 @@ function superAdd(s)
 	}
 	else
 	{
-		s *= .5	
+		s *= .4
 	}
 	
 	super = min(1, super + s)
@@ -266,8 +268,8 @@ maxHP = 5000;
 hp = maxHP;
 
 grounded = 0;
-upGravity = .60;
-downGravity = .80;
+upGravity = .80;
+downGravity = 1.0;
 moveSpeed = 8;
 moveVelocity = .2;
 
@@ -287,7 +289,7 @@ endLag = 0;
 
 moveBursts = 50
 moveBurstMax = 4
-moveBurstRegen = .6
+moveBurstRegen = .8
 moveBurstGroundForce = 50
 moveBurstAirForce = 20
 
